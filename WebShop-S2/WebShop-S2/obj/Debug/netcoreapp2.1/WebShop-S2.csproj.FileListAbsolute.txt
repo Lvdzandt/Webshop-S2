@@ -1,4 +1,3 @@
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\Models.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.csprojAssemblyReference.cache
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.csproj.CoreCompileInputs.cache
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.RazorAssemblyInfo.cache
@@ -27,8 +26,9 @@ C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreap
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.pdb
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.Views.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.Views.pdb
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\Models.pdb
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.Views.pdb
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.csproj.CopyComplete
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.pdb
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\Model.pdb

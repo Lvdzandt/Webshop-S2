@@ -1,0 +1,9 @@
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.pdb

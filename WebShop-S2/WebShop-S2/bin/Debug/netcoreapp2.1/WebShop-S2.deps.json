@@ -27,7 +27,7 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
-          "Models": "1.0.0"
+          "Model": "1.0.0"
         },
         "runtime": {
           "WebShop-S2.dll": {}
@@ -513,12 +513,12 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "Models/1.0.0": {
+      "Model/1.0.0": {
         "runtime": {
-          "Models.dll": {}
+          "Model.dll": {}
         },
         "compile": {
-          "Models.dll": {}
+          "Model.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3647,7 +3647,7 @@
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
     },
-    "Models/1.0.0": {
+    "Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
