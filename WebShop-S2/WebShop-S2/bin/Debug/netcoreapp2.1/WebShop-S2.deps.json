@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "WebShop-S2/1.0.0": {
         "dependencies": {
+          "Logic": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
@@ -511,6 +512,29 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "DAL/1.0.0": {
+        "dependencies": {
+          "Model": "1.0.0"
+        },
+        "runtime": {
+          "DAL.dll": {}
+        },
+        "compile": {
+          "DAL.dll": {}
+        }
+      },
+      "Logic/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0",
+          "Model": "1.0.0"
+        },
+        "runtime": {
+          "Logic.dll": {}
+        },
+        "compile": {
+          "Logic.dll": {}
         }
       },
       "Model/1.0.0": {
@@ -3646,6 +3670,16 @@
       "sha512": "sha512-td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Model/1.0.0": {
       "type": "project",

@@ -1,10 +1,13 @@
-﻿using System;
+﻿using DAL.Repo;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Logic
 {
-    class OrderLogic
+    public class OrderLogic
     {
+        private OrderRepository _repo = new OrderRepository();
+
     }
 }

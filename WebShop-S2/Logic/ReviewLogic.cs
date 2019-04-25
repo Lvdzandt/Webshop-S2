@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DAL.Repo;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Logic
 {
-    class ReviewLogic
+    public class ReviewLogic
     {
+        private ReviewRepository _repo = new ReviewRepository(); 
     }
 }

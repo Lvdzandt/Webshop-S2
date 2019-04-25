@@ -10,13 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Game\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Order\" />
-    <Folder Include="Views\Review\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj" />
     <ProjectReference Include="..\Models\Model.csproj" />
   </ItemGroup>
 

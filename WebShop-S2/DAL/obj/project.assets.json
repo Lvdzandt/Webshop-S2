@@ -207,6 +207,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
       }
     }
   },
@@ -673,11 +683,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Models/Model.csproj",
+      "msbuildProject": "../Models/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -709,7 +725,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj": {
+              "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
