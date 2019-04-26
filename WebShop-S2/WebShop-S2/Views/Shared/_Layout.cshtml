@@ -32,9 +32,21 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Game" asp-action="AllGames">Games</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Profile">Profile</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
-                    <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    </ul>
+                    @{  var sessionName = new Byte[20];
+                        bool nameOK = Context.Session.TryGetValue("_Name", out sessionName);
+                    }
+                <ul class="nav navbar-nav navbar-right">
+                    @if (nameOK)
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="Account">Profile</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+
+                    }
                 </ul>
             </div>
         </div>

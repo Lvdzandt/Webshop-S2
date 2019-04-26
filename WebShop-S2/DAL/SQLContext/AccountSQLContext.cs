@@ -21,8 +21,8 @@ namespace DAL.SQLContext
 
                     command = new SqlCommand("CheckLogin", Conn);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add("@param2", SqlDbType.VarChar).Value = email;
-                    command.Parameters.Add("@param1", SqlDbType.NVarChar).Value = password;
+                    command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+                    command.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
 
                     ExcistingAccount = (int)command.ExecuteScalar();
 
@@ -41,12 +41,47 @@ namespace DAL.SQLContext
 
         public bool CheckAccountTaken(string email)
         {
-            return false;
+            int ExcistingAccount;
+            using (SqlConnection Conn = ConnectDB.GetConnection())
+            {
+                Conn.Open();
+
+                command = new SqlCommand("CheckAccountTaken", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+
+                ExcistingAccount = (int)command.ExecuteScalar();
+
+
+                Conn.Close();
+            }
+            if (ExcistingAccount == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void RegisterAccount(User newacc)
         {
+            using (SqlConnection Conn = ConnectDB.GetConnection())
+            {
+                Conn.Open();
 
+
+                command = new SqlCommand("RegisterAccount", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@username", SqlDbType.NVarChar).Value = newacc.Username;
+                command.Parameters.Add("@password", SqlDbType.NVarChar).Value = newacc.Password;
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = newacc.Email;
+                command.Parameters.Add("@birthdate", SqlDbType.Date).Value = newacc.Birthday;
+                command.ExecuteNonQuery();
+
+                Conn.Close();
+            }
         }
 
         public User GetUser(string email)
