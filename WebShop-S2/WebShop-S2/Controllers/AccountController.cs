@@ -24,6 +24,13 @@ namespace WebShop_S2.Controllers
         public IActionResult Account()
         {
             AccountViewModel model = new AccountViewModel();
+            string email = HttpContext.Session.GetString(SessionKeyName);
+            User curruser = _logic.GetUser(email);
+            model.Email = curruser.Email;
+            model.Username = curruser.Username;
+            model.Birthday = curruser.Birthday;
+            model.Orders = new List<Order>();
+            model.Reviews = new List<Review>();
             return View(model);
         }
 

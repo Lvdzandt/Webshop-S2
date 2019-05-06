@@ -86,7 +86,41 @@ namespace DAL.SQLContext
 
         public User GetUser(string email)
         {
-            return null;
+            User CurrUser = new User();
+            try
+            {
+                using (SqlConnection Conn = ConnectDB.GetConnection())
+                {
+                    Conn.Open();
+
+
+                    command = new SqlCommand("GetAccount", Conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
+                    command.ExecuteNonQuery();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string Name = Convert.ToString(reader["UserName"]);
+                                string Email = Convert.ToString(reader["Email"]);
+                                DateTime date = Convert.ToDateTime(reader["Birthdate"]);
+                                CurrUser = new User(Email, Name, date);
+                            }
+                        }
+                        Conn.Close();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return CurrUser;
         }
     }
     }

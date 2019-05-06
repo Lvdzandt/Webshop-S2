@@ -16,5 +16,17 @@ namespace Model
             Birthday = _birthday;
             Password = _password;
         }
+
+        public User(string _email, string _username, DateTime _birthday)
+        {
+            Email = _email;
+            Username = _username;
+            Birthday = _birthday;
+        }
+
+        public User()
+        {
+
+        }
     }
 }

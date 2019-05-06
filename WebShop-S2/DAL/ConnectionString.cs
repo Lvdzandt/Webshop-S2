@@ -7,9 +7,9 @@ namespace DAL
     static class ConnectionString
     {
         private static readonly string DataBase = "dbi361369";
-        static private readonly string Password = "Wachtwoord1";
-        static private readonly string Server = "mssql.fhict.local";
-        static private readonly string UID = "dbi361369";
+        private static readonly string Password = "Wachtwoord1";
+        private static readonly string Server = "mssql.fhict.local";
+        private static readonly string UID = "dbi361369";
 
         public static string CreateConString()
         {
