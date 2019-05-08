@@ -40,10 +40,18 @@ namespace Logic
             newacc.Password = PasswordHash(newacc.Password);
             _repo.RegisterAccount(newacc);
         }
-
+        public User GetUser(int id)
+        {
+            return _repo.GetUser(id);
+        }
         public User GetUser(string email)
         {
             return _repo.GetUser(email);
+        }
+
+        public void UpdateUser(User user)
+        {
+            _repo.UpdateUser(user);
         }
     }
 }

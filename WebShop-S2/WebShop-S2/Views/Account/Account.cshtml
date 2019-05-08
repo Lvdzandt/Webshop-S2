@@ -4,22 +4,22 @@
     ViewData["Title"] = "Profile";
 }
 
-<div id="ProfileInfo" class="col-md-3 profile-box" style="border:outset;width:100%;margin-bottom:50px;margin-top:20px">
+<div id="ProfileInfo" class="col-md-3 profile-box" style="border:outset;width:100%;margin-bottom:10%;margin-top:20px">
     <div class="profile-box-content">
         <img style="float:left;margin:5%;border:dashed;margin-right:5px" alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
-        <h2 style="float:left;margin:5%"" class="no-margin-bottom">@Model.Username</h2>
-        @*@*<p style="float:left"><a href="#">Edit profile</a></p>*@
+        <h2 style="float:left;margin:5%" class="no-margin-bottom">@Model.Username</h2>
+        <p style="float:right;margin:0;text-align:right"><a href="/Account/Edit/@Model.ID">Edit profile</a></p>
         <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-calendar one"></span>@Model.Birthday.ToShortDateString()</p>
         <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-envelope one"></span>@Model.Email</p>
     </div>
-
 </div>
 
-<div class="profile-box-content" >
+<div class="profile-box-content" style="float:left;width:30%;margin-right:5%">
+    <h3>Orders</h3>
     <table id="TableHeader" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <td>Order</td>
+                <td>ID</td>
                 <td>Price</td>
                 <td>Status</td>
             </tr>
@@ -38,9 +38,9 @@
                 foreach (var item in Model.Orders)
                 {
                     <tr class="">
-                        <td>#Order</td>
-                        <td></td>
-                        <td>#Status</td>
+                        <td>@item.ID</td>
+                        <td>#price</td>
+                        <td>@item.OrderStatus</td>
                     </tr>
                 }
             }
@@ -48,11 +48,12 @@
     </table>
 </div>
 
-<div class="profile-box-content" >
+<div class="profile-box-content" style="float:left;width:30%;margin-right:5%">
+    <h3>Reviews</h3>
     <table id="TableHeader" class="table table-striped table-bordered">
         <thead>
             <tr>
-                <td>Review</td>
+                <td>ID</td>
                 <td>Description</td>
                 <td>Score</td>
             </tr>
@@ -68,12 +69,43 @@
             }
             else
             {
-                foreach (var item in Model.Orders)
+                foreach (var item in Model.Reviews)
                 {
                     <tr class="">
-                        <td>#Order</td>
-                        <td></td>
-                        <td>#Status</td>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.Score</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="profile-box-content" style="float:left;width:30%">
+    <h3>Wishlist</h3>
+    <table id="TableHeader" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>Item</td>
+                <td>Date added</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (true)
+            {
+                <tr class="">
+                    <td>No items found</td>
+                    <td></td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.Reviews)
+                {
+                    <tr class="">
+                        <td>#Item</td>
+                        <td>#Date</td>
                     </tr>
                 }
             }

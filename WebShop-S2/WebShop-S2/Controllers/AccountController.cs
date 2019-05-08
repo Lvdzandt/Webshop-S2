@@ -26,6 +26,7 @@ namespace WebShop_S2.Controllers
             AccountViewModel model = new AccountViewModel();
             string email = HttpContext.Session.GetString(SessionKeyName);
             User curruser = _logic.GetUser(email);
+            model.ID = curruser.ID;
             model.Email = curruser.Email;
             model.Username = curruser.Username;
             model.Birthday = curruser.Birthday;
@@ -39,6 +40,7 @@ namespace WebShop_S2.Controllers
             LoginViewModel model = new LoginViewModel();
             return View(model);
         }
+
 
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
@@ -76,6 +78,24 @@ namespace WebShop_S2.Controllers
             }
             ModelState.AddModelError("","Email has already been taken");
             return View(model);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            EditAccountModel model = new EditAccountModel();
+            User curruser = _logic.GetUser(id);
+            model.ID = id;
+            model.Username = curruser.Username;
+            model.Birthday = curruser.Birthday;
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditAccountModel model)
+        {
+            User user = new User() {ID = model.ID, Username = model.Username, Birthday = model.Birthday };
+            _logic.UpdateUser(user);
+            return RedirectToAction("Account", "Account");
         }
     }
 }

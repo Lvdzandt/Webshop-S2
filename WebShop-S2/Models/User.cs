@@ -17,8 +17,9 @@ namespace Model
             Password = _password;
         }
 
-        public User(string _email, string _username, DateTime _birthday)
+        public User(int _id, string _email, string _username, DateTime _birthday)
         {
+            ID = _id;
             Email = _email;
             Username = _username;
             Birthday = _birthday;

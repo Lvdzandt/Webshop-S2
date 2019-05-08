@@ -311,7 +311,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Session": "2.1.1",
           "Model": "1.0.0",
-          "System.Data.SqlClient": "4.4.0.0"
+          "System.Data.SqlClient": "4.4.0.0",
+          "Microsoft.EntityFrameworkCore": "2.1.1.0"
         },
         "runtime": {
           "DAL.dll": {}
@@ -330,6 +331,14 @@
           "System.Data.SqlClient.dll": {
             "assemblyVersion": "4.4.0.0",
             "fileVersion": "4.6.26606.5"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Reference/2.1.1.0": {
+        "runtime": {
+          "Microsoft.EntityFrameworkCore.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
           }
         }
       }
@@ -534,6 +543,11 @@
       "sha512": ""
     },
     "System.Data.SqlClient.Reference/4.4.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.EntityFrameworkCore.Reference/2.1.1.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

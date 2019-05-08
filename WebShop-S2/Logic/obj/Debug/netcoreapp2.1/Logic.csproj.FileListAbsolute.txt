@@ -16,3 +16,21 @@ C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csproj.CopyComplete
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Logic.deps.json
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Logic.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Logic.pdb
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csprojAssemblyReference.cache
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csproj.CoreCompileInputs.cache
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.AssemblyInfoInputs.cache
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.AssemblyInfo.cs
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csproj.CopyComplete
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.dll
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.pdb

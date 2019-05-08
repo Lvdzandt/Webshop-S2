@@ -25,10 +25,17 @@ namespace DAL.Repo
         {
             accountContext.RegisterAccount(newacc);
         }
-
+        public User GetUser(int id)
+        {
+            return accountContext.GetUser(id);
+        }
         public User GetUser(string email)
         {
             return accountContext.GetUser(email);
+        }
+        public void UpdateUser(User user)
+        {
+            accountContext.UpdateUser(user);
         }
     }
 }

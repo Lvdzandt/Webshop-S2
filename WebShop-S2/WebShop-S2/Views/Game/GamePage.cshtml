@@ -5,14 +5,26 @@
 }
 
 
-<div>
-    <h2>@Model.Game.Name</h2>
-    
-    <ul>
-        <li>@Model.Game.Price</li>
-        <li>@Model.Game.Description</li>
-    </ul>
-</div>
-<div>
+<div id="GameInfo" class="col-md-3 profile-box">
+    <div class="profile-box-content">
+        <h2 class="">@Model.Game.Name</h2>
+        <ul id="GameInfo" class="container details no-padding">
+            <li><p><span class="glyphicon glyphicon-calendar"></span> @Model.Game.ReleaseDate.ToShortDateString()</p></li>
+        </ul>
+        <hr />
+    </div>
 
 </div>
+<div style="float:right;border:dashed;width:70%;margin:2%">
+    <img alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
+</div>
+
+<div>
+    <table>
+        <tr></tr>
+    </table>
+</div>
+@for (int i = 0; i < 100; i++)
+{
+    <br />
+}

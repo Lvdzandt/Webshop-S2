@@ -11,8 +11,8 @@ namespace DAL.Interface
         bool CheckAccountTaken(string email);
 
         void RegisterAccount(User newacc);
-
+        User GetUser(int id);
         User GetUser(string email);
-        
+        void UpdateUser(User user);
     }
 }
