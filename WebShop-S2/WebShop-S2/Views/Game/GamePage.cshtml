@@ -10,6 +10,7 @@
         <h2 class="">@Model.Game.Name</h2>
         <ul id="GameInfo" class="container details no-padding">
             <li><p><span class="glyphicon glyphicon-calendar"></span> @Model.Game.ReleaseDate.ToShortDateString()</p></li>
+            <li><p><span class="glyphicon glyphicon-star"></span>Score</p></li>
         </ul>
         <hr />
     </div>
@@ -18,13 +19,23 @@
 <div style="float:right;border:dashed;width:70%;margin:2%">
     <img alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
 </div>
-
-<div>
-    <table>
-        <tr></tr>
-    </table>
+<hr />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div style="float:left;margin-top:5%;width:40%">
+    <h3>Reviews</h3>
+        <p> <h2 style="float:left">Name</h2></p>
+        <p><h2 style="float:right">Score</h2></p>
+        <br />
+        <br />
+        <br />
+    <p><h1 style="float:left">Description</h1></p>
 </div>
-@for (int i = 0; i < 100; i++)
-{
-    <br />
-}
+<div style="">
+    @Model.Game.Description
+</div>
