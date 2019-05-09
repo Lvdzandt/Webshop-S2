@@ -32,6 +32,7 @@ namespace WebShop_S2.Controllers
             model.Birthday = curruser.Birthday;
             model.Orders = new List<Order>();
             model.Reviews = new List<Review>();
+            model.WishList = WishList.GameList;
             return View(model);
         }
 

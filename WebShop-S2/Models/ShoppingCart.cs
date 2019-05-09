@@ -4,8 +4,18 @@ using System.Text;
 
 namespace Model
 {
-    class ShoppingCart
+    public static class ShoppingCart
     {
-        public List<Game> GameList { get; set; }
+        public static List<Game> GameList { get; set; }
+
+        static ShoppingCart()
+        {
+            GameList = new List<Game>();
+        }
+
+        public static void AddGame(Game game)
+        {
+            GameList.Add(game);
+        }
     }
 }

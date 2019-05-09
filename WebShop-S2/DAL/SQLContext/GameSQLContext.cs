@@ -31,11 +31,13 @@ namespace DAL.SQLContext
                         {
                             while (reader.Read())
                             {
+                                int _id = Convert.ToInt32(reader["ID"]);
                                 string Name = Convert.ToString(reader["Name"]);
                                 int Price = Convert.ToInt32(reader["Price"]);
                                 string Description = Convert.ToString(reader["Description"]);
                                 DateTime Release = Convert.ToDateTime(reader["ReleaseDate"]);
 
+                                output.ID = _id;
                                 output.Name = Name;
                                 output.Price = Price;
                                 output.Description = Description;
@@ -73,12 +75,13 @@ namespace DAL.SQLContext
                         {
                             while (reader.Read())
                             {
+                                int _id = Convert.ToInt32(reader["ID"]);
                                 string _Name = Convert.ToString(reader["Name"]);
                                 int _Price = Convert.ToInt32(reader["Price"]);
                                 string _Description = Convert.ToString(reader["Description"]);
                                 DateTime _Release = Convert.ToDateTime(reader["ReleaseDate"]);
 
-                                output.Add(new Game() {Name = _Name, Price = _Price, Description = _Description, ReleaseDate = _Release });
+                                output.Add(new Game() { ID = _id, Name = _Name, Price = _Price, Description = _Description, ReleaseDate = _Release });
                             }
                         }
                         Conn.Close();

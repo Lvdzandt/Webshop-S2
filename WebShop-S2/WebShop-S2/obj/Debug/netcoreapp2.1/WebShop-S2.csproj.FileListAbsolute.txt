@@ -26,7 +26,6 @@ C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreap
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Game\AllGames.g.cshtml.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Game\GamePage.g.cshtml.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Login.g.cshtml.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\OrderPage.g.cshtml.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Review\AddReview.g.cshtml.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
@@ -85,3 +84,5 @@ C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.pdb
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\ShoppingList.g.cshtml.cs

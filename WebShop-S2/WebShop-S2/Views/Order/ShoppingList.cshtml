@@ -1,0 +1,40 @@
+﻿@model WebShop_S2.Models.ShoppingListViewModel
+
+@{
+    ViewData["Title"] = "ShoppingList";
+}
+
+<h2>ShoppingList</h2>
+
+<div>
+    <table id="TableHeader" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.ShoppingList.Count == 0)
+            {
+                <tr class="">
+                    <td>No Items in cart</td>
+                    <td></td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.ShoppingList)
+                {
+                    <tr class="">
+                        <td>@item.Name</td>
+                        <td>@item.Price $</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <p>Total Price:</p>
+    <input type="submit" value="Checkout" />
+</div>
+

@@ -6,7 +6,7 @@
 
 <div id="ProfileInfo" class="col-md-3 profile-box" style="border:outset;width:100%;margin-bottom:10%;margin-top:20px">
     <div class="profile-box-content">
-        <img style="float:left;margin:5%;border:dashed;margin-right:5px" alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
+        <img style="float:left;margin:5%;border:dashed;margin-right:5%;width:50px;height:50px;" alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
         <h2 style="float:left;margin:5%" class="no-margin-bottom">@Model.Username</h2>
         <p style="float:right;margin:0;text-align:right"><a href="/Account/Edit/@Model.ID">Edit profile</a></p>
         <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-calendar one"></span>@Model.Birthday.ToShortDateString()</p>
@@ -89,23 +89,26 @@
             <tr>
                 <td>Item</td>
                 <td>Date added</td>
+                <td></td>
             </tr>
         </thead>
         <tbody>
-            @if (true)
+            @if (Model.WishList.Count == 0)
             {
                 <tr class="">
                     <td>No items found</td>
+                    <td></td>
                     <td></td>
                 </tr>
             }
             else
             {
-                foreach (var item in Model.Reviews)
+                foreach (var item in Model.WishList)
                 {
                     <tr class="">
-                        <td>#Item</td>
-                        <td>#Date</td>
+                        <td>@item.Name</td>
+                        <td>@item.ReleaseDate.ToShortDateString()</td>
+                        <td><a href="#">X</a></td>
                     </tr>
                 }
             }
