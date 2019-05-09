@@ -8,5 +8,6 @@ namespace DAL.Interface
     public interface IGameContext
     {
         Game GetGame(int id);
+        List<Game> GetAllGames();
     }
 }

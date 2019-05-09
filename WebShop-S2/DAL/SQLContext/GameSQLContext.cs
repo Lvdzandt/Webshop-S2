@@ -54,5 +54,43 @@ namespace DAL.SQLContext
             }
             return output;
         }
+
+        public List<Game> GetAllGames()
+        {
+            List<Game> output = new List<Game>();
+            try
+            {
+                using (SqlConnection Conn = ConnectDB.GetConnection())
+                {
+                    Conn.Open();
+
+                    command = new SqlCommand("GetAllGames", Conn);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                string _Name = Convert.ToString(reader["Name"]);
+                                int _Price = Convert.ToInt32(reader["Price"]);
+                                string _Description = Convert.ToString(reader["Description"]);
+                                DateTime _Release = Convert.ToDateTime(reader["ReleaseDate"]);
+
+                                output.Add(new Game() {Name = _Name, Price = _Price, Description = _Description, ReleaseDate = _Release });
+                            }
+                        }
+                        Conn.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return output;
+        }
     }
 }

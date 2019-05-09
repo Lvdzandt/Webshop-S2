@@ -1,6 +1,7 @@
 ﻿using DAL.Repo;
 using Model;
 using System;
+using System.Collections.Generic;
 
 namespace Logic
 {
@@ -11,6 +12,11 @@ namespace Logic
         public Game GetGame(int id)
         {
             return _repo.GetGame(id);
+        }
+
+        public List<Game> GetAllGames()
+        {
+            return _repo.GetAllGames();
         }
     }
 }

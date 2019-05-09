@@ -2,6 +2,7 @@
 using DAL.SQLContext;
 using Model;
 using System;
+using System.Collections.Generic;
 
 namespace DAL.Repo
 {
@@ -11,6 +12,11 @@ namespace DAL.Repo
         public Game GetGame(int id)
         {
             return gameContext.GetGame(id);
+        }
+
+        public List<Game> GetAllGames()
+        {
+            return gameContext.GetAllGames();
         }
 
     }

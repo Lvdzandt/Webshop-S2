@@ -16,16 +16,17 @@ namespace WebShop_S2.Controllers
             return View();
         }
 
-        public IActionResult GamePage()
+        public IActionResult GamePage(int id)
         {
             GameViewModel model = new GameViewModel();
-            model.Game = _logic.GetGame(1);
+            model.Game = _logic.GetGame(id);
             return View(model);
         }
 
         public IActionResult AllGames()
         {
             AllGameViewModel model = new AllGameViewModel();
+            model.Games = _logic.GetAllGames();
             return View(model);
         }
 

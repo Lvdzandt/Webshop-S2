@@ -7,12 +7,17 @@
 <h2>AllGames</h2>
 
 <div>
-    <h4>AllGameViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-    </dl>
+    @foreach (var item in Model.Games)
+    {
+        <div style="margin-right:10%;float:left">
+            <img style="" alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
+            <p style="float:left;margin-right:20px"><a href="/Game/GamePage/@item.ID"> @item.Name</a></p>
+            <p style="float:left">@item.Price</p>
+        </div>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+
