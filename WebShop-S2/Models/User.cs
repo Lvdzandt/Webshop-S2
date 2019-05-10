@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Model
 {
@@ -9,20 +7,20 @@ namespace Model
         public string Username { get; set; }
         public DateTime Birthday { get; set; }
 
-        public User(string _email,string _username,DateTime _birthday,string _password)
+        public User(string email,string username,DateTime birthday,string password)
         {
-            Email = _email;
-            Username = _username;
-            Birthday = _birthday;
-            Password = _password;
+            Email = email;
+            Username = username;
+            Birthday = birthday;
+            Password = password;
         }
 
-        public User(int _id, string _email, string _username, DateTime _birthday)
+        public User(int id, string email, string username, DateTime birthday)
         {
-            ID = _id;
-            Email = _email;
-            Username = _username;
-            Birthday = _birthday;
+            Id = id;
+            Email = email;
+            Username = username;
+            Birthday = birthday;
         }
 
         public User()

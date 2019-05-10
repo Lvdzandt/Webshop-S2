@@ -9,5 +9,6 @@ namespace WebShop_S2.Models
     public class ShoppingListViewModel
     {
         public List<Game> ShoppingList { get; set; }
+        public Double TotalPrice { get; set; }
     }
 }

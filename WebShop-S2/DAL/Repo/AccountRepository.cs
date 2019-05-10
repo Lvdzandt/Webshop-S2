@@ -1,41 +1,38 @@
 ﻿using DAL.Interface;
 using DAL.SQLContext;
 using Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DAL.Repo
 {
     public class AccountRepository
     {
-        IAccountContext accountContext = new AccountSQLContext();
+        public readonly IAccountContext AccountContext = new AccountSqlContext();
 
         public bool CheckLogin(string email, string password)
         {
-            return accountContext.CheckLogin(email, password);
+            return AccountContext.CheckLogin(email, password);
         }
 
         public bool CheckAccountTaken(string email)
         {
-            return accountContext.CheckAccountTaken(email);
+            return AccountContext.CheckAccountTaken(email);
         }
 
-        public void RegisterAccount(User newacc)
+        public void RegisterAccount(User newAccount)
         {
-            accountContext.RegisterAccount(newacc);
+            AccountContext.RegisterAccount(newAccount);
         }
         public User GetUser(int id)
         {
-            return accountContext.GetUser(id);
+            return AccountContext.GetUser(id);
         }
         public User GetUser(string email)
         {
-            return accountContext.GetUser(email);
+            return AccountContext.GetUser(email);
         }
         public void UpdateUser(User user)
         {
-            accountContext.UpdateUser(user);
+            AccountContext.UpdateUser(user);
         }
     }
 }

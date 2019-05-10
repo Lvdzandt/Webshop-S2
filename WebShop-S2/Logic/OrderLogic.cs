@@ -1,8 +1,6 @@
 ﻿using DAL.Repo;
 using Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Logic
 {
@@ -12,7 +10,19 @@ namespace Logic
 
         public List<Game> GetShoppingList()
         {
-            return null;
+            return ShoppingCart.GameList;
         }
+
+        public double GetTotalPrice(List<Game> games)
+        {
+            double totalPrice = 0;
+            foreach (var g in games)
+            {
+                totalPrice += g.Price;
+            }
+            return totalPrice;
+        }
+
+
     }
 }

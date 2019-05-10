@@ -34,7 +34,13 @@
             }
         </tbody>
     </table>
-    <p>Total Price:</p>
-    <input type="submit" value="Checkout" />
+    <div style="float:right">
+        <p>Total Price: @Model.TotalPrice $</p>
+        @using (Html.BeginForm("OrderPage", "Order", new { model = @Model }, FormMethod.Post))
+        {
+            <input type="submit" value="Checkout" />
+
+        }
+    </div>
 </div>
 

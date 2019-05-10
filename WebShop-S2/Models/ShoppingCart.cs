@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Model
 {
@@ -15,7 +13,18 @@ namespace Model
 
         public static void AddGame(Game game)
         {
-            GameList.Add(game);
+            bool Double = false;
+            foreach (var item in GameList)
+            {
+                if (item.Name == game.Name)
+                {
+                    Double = true;
+                }
+            }
+            if (!Double)
+            {
+                GameList.Add(game);
+            }
         }
     }
 }

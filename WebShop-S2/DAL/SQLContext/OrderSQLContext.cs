@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.SQLContext
 {
-    class OrderSQLContext : IOrderContext
+    class OrderSqlContext : IOrderContext
     {
     }
 }

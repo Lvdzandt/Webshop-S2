@@ -34,11 +34,12 @@
                     <li><a asp-area="" asp-controller="Game" asp-action="AllGames">Games</a></li>
                     </ul>
                     @{  var sessionName = new Byte[20];
-                        bool nameOK = Context.Session.TryGetValue("_Name", out sessionName);
+                        var status = Context.Session.TryGetValue("_Name", out sessionName);
                     }
                 <ul class="nav navbar-nav navbar-right">
-                    @if (nameOK)
+                    @if (status)
                     {
+                        <li><a asp-area="" asp-controller="Order" asp-action="ShoppingList"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         <li><a asp-area="" asp-controller="Account" asp-action="Account">Profile</a></li>
                         <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
                     }

@@ -4,13 +4,13 @@
     ViewData["Title"] = "Profile";
 }
 
-<div id="ProfileInfo" class="col-md-3 profile-box" style="border:outset;width:100%;margin-bottom:10%;margin-top:20px">
-    <div class="profile-box-content">
+<div id="ProfileInfo" class="col-md-3" style="border:outset;width:100%;margin-bottom:10%;margin-top:20px">
+    <div class="">
         <img style="float:left;margin:5%;border:dashed;margin-right:5%;width:50px;height:50px;" alt="/images/NoIMG.png" src="~/images/NoIMG.png" class="img img-responsive profile-image">
-        <h2 style="float:left;margin:5%" class="no-margin-bottom">@Model.Username</h2>
-        <p style="float:right;margin:0;text-align:right"><a href="/Account/Edit/@Model.ID">Edit profile</a></p>
-        <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-calendar one"></span>@Model.Birthday.ToShortDateString()</p>
-        <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-envelope one"></span>@Model.Email</p>
+        <h2 style="float:left;margin:5%" >@Model.Username</h2>
+        <p style="float:right;margin:0;text-align:right"><a href="/Account/Edit/@Model.Id">Edit profile</a></p>
+        <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-calendar"></span>@Model.Birthday.ToShortDateString()</p>
+        <p style="float:right;margin:5%;text-align:center"><span class="glyphicon glyphicon-envelope"></span>@Model.Email</p>
     </div>
 </div>
 
@@ -38,7 +38,7 @@
                 foreach (var item in Model.Orders)
                 {
                     <tr class="">
-                        <td>@item.ID</td>
+                        <td>@item.Id</td>
                         <td>#price</td>
                         <td>@item.OrderStatus</td>
                     </tr>

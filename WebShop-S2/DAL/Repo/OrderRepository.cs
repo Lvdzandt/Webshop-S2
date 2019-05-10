@@ -6,5 +6,9 @@ namespace DAL.Repo
 {
     public class OrderRepository
     {
+        public OrderRepository()
+        {
+
+        }
     }
 }

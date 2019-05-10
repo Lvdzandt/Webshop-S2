@@ -1,8 +1,6 @@
 ﻿using DAL.Repo;
-using Microsoft.AspNetCore.Http;
 using Model;
 using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,9 +8,9 @@ namespace Logic
 {
     public class AccountLogic
     {
-        private AccountRepository _repo = new AccountRepository();
+        private readonly AccountRepository _repo = new AccountRepository();
 
-        private string PasswordHash(string password)
+        private static string PasswordHash(string password)
         {
             using (var sha256 = SHA256.Create())
             { 

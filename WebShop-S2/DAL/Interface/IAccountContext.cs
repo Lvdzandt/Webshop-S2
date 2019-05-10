@@ -1,7 +1,4 @@
 ﻿using Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DAL.Interface
 {
@@ -10,7 +7,7 @@ namespace DAL.Interface
         bool CheckLogin(string email, string password);
         bool CheckAccountTaken(string email);
 
-        void RegisterAccount(User newacc);
+        void RegisterAccount(User Account);
         User GetUser(int id);
         User GetUser(string email);
         void UpdateUser(User user);

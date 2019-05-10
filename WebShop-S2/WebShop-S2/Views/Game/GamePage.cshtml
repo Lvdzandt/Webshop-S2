@@ -4,23 +4,29 @@
     ViewData["Title"] = "GamePage";
 }
 
+@{ var sessionName = new byte[20];
+    var state = Context.Session.TryGetValue("_Name", out sessionName);
+}
+
 <div>
-    <div id="GameInfo" class="col-md-3 profile-box">
-        <div class="profile-box-content">
+    <div id="GameInfo" >
+        <div>
             <h2 class="">@Model.Game.Name</h2>
-            <ul id="GameInfo" class="container details no-padding">
+            <ul id="GameInfo">
                 <li><p><span class="glyphicon glyphicon-calendar"></span> @Model.Game.ReleaseDate.ToShortDateString()</p></li>
                 <li><p><span class="glyphicon glyphicon-star"></span>Score</p></li>
             </ul>
             <hr />
-
-            @using (Html.BeginForm("AddShoppingList", "Order", new { id = @Model.Game.ID }, FormMethod.Post))
+            @if (state)
             {
-                <input style="float:left;margin-right:10%" type="submit" value="ShopingList" />
-            }
-            @using (Html.BeginForm("AddWishList", "Order", new { id = @Model.Game.ID }, FormMethod.Post))
-            {
-                <input style="float:left" type="submit" value="WishList" />
+                @using (Html.BeginForm("AddShoppingList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
+                {
+                    <input style="float:left;margin-right:10%" type="submit" value="ShopingList" />
+                }
+                @using (Html.BeginForm("AddWishList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
+                {
+                    <input style="float:left" type="submit" value="WishList" />
+                }
             }
         </div>
 

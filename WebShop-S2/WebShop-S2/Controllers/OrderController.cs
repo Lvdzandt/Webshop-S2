@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Logic;
+﻿using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using WebShop_S2.Models;
@@ -11,40 +7,38 @@ namespace WebShop_S2.Controllers
 {
     public class OrderController : Controller
     {
-        OrderLogic _logic = new OrderLogic();
-        public IActionResult Index()
+        private readonly OrderLogic _logic = new OrderLogic();
+        
+        [HttpPost]
+        public IActionResult OrderPage(ShoppingListViewModel cart)
         {
-            return View();
-        }
-        public IActionResult OrderPage()
-        {
-            OrderViewModel model = new OrderViewModel();
+            OrderViewModel model = new OrderViewModel {Order = {GameList = cart.ShoppingList}};
             return View(model);
         }
 
         public IActionResult ShoppingList()
         {
-            ShoppingListViewModel model = new ShoppingListViewModel();
-            model.ShoppingList = ShoppingCart.GameList;
+            ShoppingListViewModel model = new ShoppingListViewModel {ShoppingList = _logic.GetShoppingList()};
+            model.TotalPrice = _logic.GetTotalPrice(model.ShoppingList);
             return View(model);
         }
 
         [HttpPost]
         public IActionResult AddShoppinglist(int id)
         {
-            GameLogic logic = new GameLogic();
-            Game game = logic.GetGame(id);
+            var logic = new GameLogic();
+            var game = logic.GetGame(id);
             ShoppingCart.AddGame(game);
-            return RedirectToAction("GamePage", "Game", new { @id = id });
+            return RedirectToAction("GamePage", "Game", new {id });
         }
 
         [HttpPost]
         public IActionResult AddWishList(int id)
         {
-            GameLogic logic = new GameLogic();
-            Game game = logic.GetGame(id);
+            var logic = new GameLogic();
+            var game = logic.GetGame(id);
             WishList.AddGame(game);
-            return RedirectToAction("GamePage", "Game", new { @id = id });
+            return RedirectToAction("GamePage", "Game", new {id });
         }
     }
 }

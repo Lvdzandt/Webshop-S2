@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Text;
+﻿using System.Data.SqlClient;
 
 namespace DAL
 {
-    static class ConnectDB
+    public static class ConnectDb
     {
         public static SqlConnection GetConnection()
         {

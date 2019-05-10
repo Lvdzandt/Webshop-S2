@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.SQLContext
 {
-    class ReviewSQLContext : IReviewContext
+    class ReviewSqlContext : IReviewContext
     {
     }
 }

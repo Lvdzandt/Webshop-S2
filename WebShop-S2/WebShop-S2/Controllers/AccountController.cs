@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Mvc;
 using WebShop_S2.Models;
 using Logic;
@@ -10,26 +8,24 @@ using Microsoft.AspNetCore.Http;
 
 namespace WebShop_S2.Controllers
 {
+    [SuppressMessage("ReSharper", "SuggestVarOrType_SimpleTypes")]
     public class AccountController : Controller
     {
-        AccountLogic _logic = new AccountLogic();
+        public readonly AccountLogic Logic = new AccountLogic();
 
         public const string SessionKeyName = "_Name";
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
 
         public IActionResult Account()
         {
-            AccountViewModel model = new AccountViewModel();
-            string email = HttpContext.Session.GetString(SessionKeyName);
-            User curruser = _logic.GetUser(email);
-            model.ID = curruser.ID;
-            model.Email = curruser.Email;
-            model.Username = curruser.Username;
-            model.Birthday = curruser.Birthday;
+            var model = new AccountViewModel();
+            var email = HttpContext.Session.GetString(SessionKeyName);
+            var user = Logic.GetUser(email);
+            model.Id = user.Id;
+            model.Email = user.Email;
+            model.Username = user.Username;
+            model.Birthday = user.Birthday;
             model.Orders = new List<Order>();
             model.Reviews = new List<Review>();
             model.WishList = WishList.GameList;
@@ -46,7 +42,7 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            if (_logic.CheckLogin(model.Email, model.Password))
+            if (Logic.CheckLogin(model.Email, model.Password))
             {
                 CurrUser.Username = model.Email;
                 HttpContext.Session.SetString(SessionKeyName, model.Email);
@@ -71,10 +67,10 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Register(RegisterViewModel model)
         {
-            if (!_logic.CheckAccountTaken(model.Email))
+            if (!Logic.CheckAccountTaken(model.Email))
             {
-                User newuser = new User(model.Email,model.Username,model.Birthday,model.Password);
-                _logic.RegisterAccount(newuser);
+                User user = new User(model.Email,model.Username,model.Birthday,model.Password);
+                Logic.RegisterAccount(user);
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("","Email has already been taken");
@@ -84,18 +80,18 @@ namespace WebShop_S2.Controllers
         public IActionResult Edit(int id)
         {
             EditAccountModel model = new EditAccountModel();
-            User curruser = _logic.GetUser(id);
-            model.ID = id;
-            model.Username = curruser.Username;
-            model.Birthday = curruser.Birthday;
+            User user = Logic.GetUser(id);
+            model.Id = id;
+            model.Username = user.Username;
+            model.Birthday = user.Birthday;
             return View(model);
         }
 
         [HttpPost]
         public IActionResult Edit(EditAccountModel model)
         {
-            User user = new User() {ID = model.ID, Username = model.Username, Birthday = model.Birthday };
-            _logic.UpdateUser(user);
+            User user = new User() {Id = model.Id, Username = model.Username, Birthday = model.Birthday };
+            Logic.UpdateUser(user);
             return RedirectToAction("Account", "Account");
         }
     }

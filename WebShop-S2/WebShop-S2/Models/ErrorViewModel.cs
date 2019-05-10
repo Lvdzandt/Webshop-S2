@@ -1,4 +1,3 @@
-using System;
 
 namespace WebShop_S2.Models
 {
