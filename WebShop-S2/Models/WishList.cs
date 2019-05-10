@@ -11,6 +11,18 @@ namespace Model
             GameList = new List<Game>();
         }
 
+        public static void RemoveGame(int id)
+        {
+            foreach (var item in GameList)
+            {
+                if (item.Id == id)
+                {
+                    GameList.Remove(item);
+                    break;
+                }
+            }
+        }
+
         public static void AddGame(Game game)
         {
             bool Double = false;

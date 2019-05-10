@@ -108,7 +108,10 @@
                     <tr class="">
                         <td>@item.Name</td>
                         <td>@item.ReleaseDate.ToShortDateString()</td>
-                        <td><a href="#">X</a></td>
+                        @using (Html.BeginForm("RemoveWishList", "Order", new { id = @item.Id}, FormMethod.Post))
+                        {
+                            <td><input type="submit" value="X"/></td>
+                        }
                     </tr>
                 }
             }

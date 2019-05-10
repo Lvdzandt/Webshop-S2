@@ -1,4 +1,5 @@
-﻿@model WebShop_S2.Models.ShoppingListViewModel
+﻿@using Model
+@model WebShop_S2.Models.ShoppingListViewModel
 
 @{
     ViewData["Title"] = "ShoppingList";
@@ -9,38 +10,46 @@
 <div>
     <table id="TableHeader" class="table table-striped table-bordered">
         <thead>
-            <tr>
-                <td>Name</td>
-                <td>Price</td>
-            </tr>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td></td>
+        </tr>
         </thead>
         <tbody>
-            @if (Model.ShoppingList.Count == 0)
+        @if (Model.ShoppingList.Count == 0)
+        {
+            <tr class="">
+                <td>No Items in cart</td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model.ShoppingList)
             {
                 <tr class="">
-                    <td>No Items in cart</td>
-                    <td></td>
+                    <td>@item.Name</td>
+                    <td>@item.Price $</td>
+                    @using (Html.BeginForm("ShoppingList", "Order", new { id = @item.Id }, FormMethod.Post))
+                    {
+                        <td><input type="submit" value="X"/></td>
+                    }
                 </tr>
             }
-            else
-            {
-                foreach (var item in Model.ShoppingList)
-                {
-                    <tr class="">
-                        <td>@item.Name</td>
-                        <td>@item.Price $</td>
-                    </tr>
-                }
-            }
+        }
         </tbody>
     </table>
-    <div style="float:right">
-        <p>Total Price: @Model.TotalPrice $</p>
-        @using (Html.BeginForm("OrderPage", "Order", new { model = @Model }, FormMethod.Post))
-        {
-            <input type="submit" value="Checkout" />
+    
+</div>
+<div style="float:right">
+    <p>Total Price: @Model.TotalPrice $</p>
+    @*@{var myObjectWrapper = new MyObjectWrapper() { Data = @Model.availableTimesList };}*@
 
-        }
-    </div>
+    @using (Html.BeginForm("OrderPage", "Order", new { _model = @Model }, FormMethod.Post))
+    {
+        <input type="submit" value="Checkout" />
+    }
 </div>
 

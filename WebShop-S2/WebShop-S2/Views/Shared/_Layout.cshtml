@@ -33,7 +33,7 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Game" asp-action="AllGames">Games</a></li>
                     </ul>
-                    @{  var sessionName = new Byte[20];
+                    @{  var sessionName = new byte[20];
                         var status = Context.Session.TryGetValue("_Name", out sessionName);
                     }
                 <ul class="nav navbar-nav navbar-right">
