@@ -11,6 +11,11 @@ namespace Model
             GameList = new List<Game>();
         }
 
+        public static void ClearList()
+        {
+            GameList.Clear();
+        }
+
         public static void RemoveGame(int id)
         {
             foreach (var item in GameList)

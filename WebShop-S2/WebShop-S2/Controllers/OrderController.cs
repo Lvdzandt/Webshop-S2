@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -20,6 +21,16 @@ namespace WebShop_S2.Controllers
             model.TotalPrice = _logic.GetTotalPrice(model.Order.GameList);
             
             return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult CheckOut(Order order)
+        {
+            order.GameList = _logic.GetShoppingList();
+            order.OrderStatus = OrderStatus.Waiting;
+            _logic.AddOrder(order);
+            _logic.ClearShoppinglist();
+            return RedirectToAction("Index","Home");
         }
 
         public IActionResult ShoppingList()

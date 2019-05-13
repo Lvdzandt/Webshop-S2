@@ -8,7 +8,7 @@ namespace Model
     {
         Delivered,
         Shipped,
-
+        Waiting,
     }
 
     public class Order

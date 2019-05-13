@@ -13,6 +13,11 @@ namespace Logic
             return ShoppingCart.GameList;
         }
 
+        public void ClearShoppinglist()
+        {
+            ShoppingCart.ClearList();
+        }
+
         public double GetTotalPrice(List<Game> games)
         {
             double totalPrice = 0;
@@ -23,6 +28,9 @@ namespace Logic
             return totalPrice;
         }
 
-
+        public void AddOrder(Order order)
+        {
+            _repo.AddOrder(order);
+        }
     }
 }
