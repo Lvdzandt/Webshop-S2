@@ -8,7 +8,7 @@ namespace Model
     {
         Delivered,
         Shipped,
-
+        Waiting
     }
 
     public class Order
@@ -18,5 +18,6 @@ namespace Model
         public string Address { get; set; }
         public DateTime OrderDate { get; set; }
         public OrderStatus OrderStatus { get; set; }
+        public int UserId { get; set; }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Mvc;
-using WebShop_S2.Models;
-using Logic;
-using Model;
+﻿using Logic;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Model;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using WebShop_S2.Models;
 
 namespace WebShop_S2.Controllers
 {
@@ -15,10 +15,11 @@ namespace WebShop_S2.Controllers
 
         public const string SessionKeyName = "_Name";
 
-        
+
 
         public IActionResult Account()
         {
+            OrderLogic OrderLogic = new OrderLogic();
             var model = new AccountViewModel();
             var email = HttpContext.Session.GetString(SessionKeyName);
             var user = Logic.GetUser(email);
@@ -26,7 +27,7 @@ namespace WebShop_S2.Controllers
             model.Email = user.Email;
             model.Username = user.Username;
             model.Birthday = user.Birthday;
-            model.Orders = new List<Order>();
+            model.Orders = OrderLogic.GetAllOrderById(user.Id);
             model.Reviews = new List<Review>();
             model.WishList = WishList.GameList;
             return View(model);
@@ -69,11 +70,11 @@ namespace WebShop_S2.Controllers
         {
             if (!Logic.CheckAccountTaken(model.Email))
             {
-                User user = new User(model.Email,model.Username,model.Birthday,model.Password);
+                User user = new User(model.Email, model.Username, model.Birthday, model.Password);
                 Logic.RegisterAccount(user);
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("","Email has already been taken");
+            ModelState.AddModelError("", "Email has already been taken");
             return View(model);
         }
 
@@ -90,7 +91,7 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Edit(EditAccountModel model)
         {
-            User user = new User() {Id = model.Id, Username = model.Username, Birthday = model.Birthday };
+            User user = new User() { Id = model.Id, Username = model.Username, Birthday = model.Birthday };
             Logic.UpdateUser(user);
             return RedirectToAction("Account", "Account");
         }

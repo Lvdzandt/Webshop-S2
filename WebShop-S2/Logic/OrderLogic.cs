@@ -13,6 +13,16 @@ namespace Logic
             return ShoppingCart.GameList;
         }
 
+        public void AddOrder(Order order)
+        {
+            _repo.AddOrder(order);
+        }
+
+        public List<Order> GetAllOrderById(int id)
+        {
+            return _repo.GetAllOrderById(id);
+        }
+
         public double GetTotalPrice(List<Game> games)
         {
             double totalPrice = 0;

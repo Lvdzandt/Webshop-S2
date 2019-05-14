@@ -20,11 +20,9 @@ C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Log
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\DAL.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Model.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\DAL.pdb
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Model.pdb
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml
-C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csprojAssemblyReference.cache
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.csproj.CoreCompileInputs.cache
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Logic\obj\Debug\netcoreapp2.1\Logic.AssemblyInfoInputs.cache

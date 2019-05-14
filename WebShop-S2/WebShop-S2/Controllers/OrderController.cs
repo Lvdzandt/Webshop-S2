@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging.Abstractions;
 using Model;
 using WebShop_S2.Models;
 
@@ -13,19 +14,44 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult OrderPage()
         {
-            OrderViewModel model = new OrderViewModel();
+            if (_logic.GetShoppingList().Count != 0)
+            {
+                AccountLogic logic = new AccountLogic();
+                OrderViewModel model = new OrderViewModel();
+                Order order = new Order();
+                order.GameList = _logic.GetShoppingList();
+                model.Order = order;
+                model.TotalPrice = _logic.GetTotalPrice(model.Order.GameList);
+                model.Order.UserId = logic.GetUser(CurrUser.Username).Id;
+                
+                return View(model);
+            }
+            
+            return RedirectToAction("ShoppingList", "Order");
+        }
+
+        public IActionResult Checkout(OrderViewModel model)
+        {
+            AccountLogic logic = new AccountLogic();
             Order order = new Order();
             order.GameList = _logic.GetShoppingList();
-            model.Order = order;
-            model.TotalPrice = _logic.GetTotalPrice(model.Order.GameList);
-            
-            return View(model);
+            order.OrderStatus = OrderStatus.Waiting;
+            order.Address = model.Order.Address;
+            order.OrderDate = model.Order.OrderDate;
+            order.UserId = logic.GetUser(CurrUser.Username).Id;
+
+            _logic.AddOrder(order);
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult ShoppingList()
         {
             ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = _logic.GetShoppingList() };
             model.TotalPrice = _logic.GetTotalPrice(model.ShoppingList);
+            if (_logic.GetShoppingList().Count == 0)
+            {
+                ModelState.AddModelError("CustomError", "Cart is empty, please add an order before you checkout");
+            }
             return View(model);
         }
 
