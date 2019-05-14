@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -42,6 +43,16 @@ namespace WebShop_S2.Controllers
 
             _logic.AddOrder(order);
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult CheckOut(Order order)
+        {
+            order.GameList = _logic.GetShoppingList();
+            order.OrderStatus = OrderStatus.Waiting;
+            _logic.AddOrder(order);
+            _logic.ClearShoppinglist();
+            return RedirectToAction("Index","Home");
         }
 
         public IActionResult ShoppingList()
