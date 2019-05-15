@@ -18,6 +18,11 @@ namespace Logic
             _repo.AddOrder(order);
         }
 
+        public void ClearShoppinglist()
+        {
+            ShoppingCart.ClearList();
+        }
+
         public List<Order> GetAllOrderById(int id)
         {
             return _repo.GetAllOrderById(id);

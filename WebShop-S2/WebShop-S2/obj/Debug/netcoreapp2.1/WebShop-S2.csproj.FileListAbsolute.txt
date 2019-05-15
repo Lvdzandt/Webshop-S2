@@ -40,6 +40,8 @@ C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreap
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.csproj.CopyComplete
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.pdb
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\ShoppingList.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.deps.json
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.runtimeconfig.json
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\bin\Debug\netcoreapp2.1\WebShop-S2.runtimeconfig.dev.json
@@ -63,12 +65,14 @@ C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.TagHelpers.output.cache
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.RazorCoreGenerate.cache
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Account.g.cshtml.cs
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Game\AllGames.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Game\GamePage.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\OrderPage.g.cshtml.cs
+C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\ShoppingList.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Review\AddReview.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -82,7 +86,3 @@ C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.csproj.CopyComplete
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.pdb
-C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Account\Edit.g.cshtml.cs
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\ShoppingList.g.cshtml.cs
-C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\ShoppingList.g.cshtml.cs

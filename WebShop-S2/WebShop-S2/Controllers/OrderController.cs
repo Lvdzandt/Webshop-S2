@@ -30,7 +30,7 @@ namespace WebShop_S2.Controllers
             
             return RedirectToAction("ShoppingList", "Order");
         }
-
+        [HttpPost]
         public IActionResult Checkout(OrderViewModel model)
         {
             AccountLogic logic = new AccountLogic();
@@ -45,7 +45,7 @@ namespace WebShop_S2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
+        
         public IActionResult CheckOut(Order order)
         {
             order.GameList = _logic.GetShoppingList();
