@@ -31,6 +31,46 @@ namespace DAL.SQLContext
 
 
             }
+            AddGamesOrder(order.GameList);
+        }
+
+        private void AddGamesOrder(List<Game> games)
+        {
+            int userId = GetOrderId();
+
+            foreach (var item in games)
+            {
+                using (var conn = ConnectDb.GetConnection())
+                {
+
+                    conn.Open();
+
+                    Command = new SqlCommand("AddGamesOrder", conn) { CommandType = CommandType.StoredProcedure };
+                    Command.Parameters.Add("@gameId", SqlDbType.Int).Value = item.Id;
+                    Command.Parameters.Add("@orderId", SqlDbType.Int).Value = userId;
+                    Command.ExecuteNonQuery();
+
+                    conn.Close();
+
+
+                }
+            }
+        }
+
+        private int GetOrderId()
+        {
+            int orderId = 0;
+
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+                Command = new SqlCommand("GetOrderId", conn) { CommandType = CommandType.StoredProcedure };
+                orderId = Convert.ToInt32(Command.ExecuteScalar());
+
+
+            }
+            return orderId;
         }
 
         public List<Order> GetAllOrdersById(int userId)
@@ -54,7 +94,7 @@ namespace DAL.SQLContext
                             var id = Convert.ToInt32(reader["ID"]);
                             Enum.TryParse(Convert.ToString(reader["OrderStatus"]), out OrderStatus orderStatus);
                             var date = Convert.ToDateTime(reader["OrderDate"]);
-                            orders.Add(new Order(){Id = id,OrderStatus = orderStatus,OrderDate = date});
+                            orders.Add(new Order() { Id = id, OrderStatus = orderStatus, OrderDate = date });
                         }
                     }
                     conn.Close();

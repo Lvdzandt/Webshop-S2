@@ -9,5 +9,6 @@ namespace DAL.Interface
     {
         void AddOrder(Order order);
         List<Order> GetAllOrdersById(int id);
+        //void AddGamesOrder(List<Game> games, int orderId);
     }
 }

@@ -42,6 +42,7 @@ namespace WebShop_S2.Controllers
             order.UserId = logic.GetUser(CurrUser.Username).Id;
 
             _logic.AddOrder(order);
+            _logic.ClearShoppinglist();
             return RedirectToAction("Index", "Home");
         }
 
