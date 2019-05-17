@@ -15,6 +15,11 @@ namespace DAL.Repo
 
         }
 
+
+        public Order GetOrder(int id)
+        {
+            return OrderContext.GetOrder(id);
+        }
         public void AddOrder(Order order)
         {
             OrderContext.AddOrder(order);
@@ -24,5 +29,21 @@ namespace DAL.Repo
         {
             return OrderContext.GetAllOrdersById(id);
         }
+
+        public List<Tuple<int, int>> GetAllGames()
+        {
+            return OrderContext.GetAllGames();
+        }
+
+        public void AddGamesOrder(List<Game> games, int orderId)
+        {
+            OrderContext.AddGamesOrder(games,orderId);
+        }
+
+        public int GetOrderId()
+        {
+            return OrderContext.GetOrderId();
+        }
+
     }
 }

@@ -11,6 +11,35 @@ namespace DAL.SQLContext
     class OrderSqlContext : IOrderContext
     {
         public SqlCommand Command;
+
+        public Order GetOrder(int id)
+        {
+            Order order = new Order();
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+                Command = new SqlCommand("GetOrder", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+                using (var reader = Command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                        }
+                    }
+
+                    conn.Close();
+                }
+                ;
+            }
+
+
+            return null;
+        }
+
         public void AddOrder(Order order)
         {
             using (var conn = ConnectDb.GetConnection())
@@ -31,12 +60,11 @@ namespace DAL.SQLContext
 
 
             }
-            AddGamesOrder(order.GameList);
         }
 
-        private void AddGamesOrder(List<Game> games)
+        public void AddGamesOrder(List<Game> games, int Id)
         {
-            int userId = GetOrderId();
+            int userId = Id;
 
             foreach (var item in games)
             {
@@ -57,7 +85,7 @@ namespace DAL.SQLContext
             }
         }
 
-        private int GetOrderId()
+        public int GetOrderId()
         {
             int orderId = 0;
 
@@ -67,10 +95,39 @@ namespace DAL.SQLContext
 
                 Command = new SqlCommand("GetOrderId", conn) { CommandType = CommandType.StoredProcedure };
                 orderId = Convert.ToInt32(Command.ExecuteScalar());
-
-
             }
             return orderId;
+        }
+
+        public List<Tuple<int,int>> GetAllGames()
+        {
+            List<Tuple<int,int>> List = new List<Tuple<int, int>>();
+            using (var conn = ConnectDb.GetConnection())
+            {
+
+                conn.Open();
+
+
+                Command = new SqlCommand("GetOrderGames", conn) {CommandType = CommandType.StoredProcedure};
+                
+                Command.ExecuteNonQuery();
+                using (var reader = Command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var gameId = Convert.ToInt32(reader["GameID"]);
+                            var orderId = Convert.ToInt32(reader["OrderID"]);
+                            List.Add(new Tuple<int, int>(gameId,orderId));
+                        }
+                    }
+
+                    conn.Close();
+                }
+            }
+
+            return List;
         }
 
         public List<Order> GetAllOrdersById(int userId)
@@ -99,8 +156,6 @@ namespace DAL.SQLContext
                     }
                     conn.Close();
                 }
-
-
             }
 
             return orders;

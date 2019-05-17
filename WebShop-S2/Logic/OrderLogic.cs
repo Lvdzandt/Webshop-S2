@@ -1,4 +1,5 @@
-﻿using DAL.Repo;
+﻿using System;
+using DAL.Repo;
 using Model;
 using System.Collections.Generic;
 
@@ -8,6 +9,10 @@ namespace Logic
     {
         private OrderRepository _repo = new OrderRepository();
 
+        public Order GetOrder(int id)
+        {
+            return _repo.GetOrder(id);
+        }
         public List<Game> GetShoppingList()
         {
             return ShoppingCart.GameList;
@@ -28,9 +33,24 @@ namespace Logic
             return _repo.GetAllOrderById(id);
         }
 
-        public double GetTotalPrice(List<Game> games)
+        public List<Tuple<int, int>> GetAllGames()
         {
-            double totalPrice = 0;
+            return _repo.GetAllGames();
+        }
+
+        public int GetOrderId()
+        {
+            return _repo.GetOrderId();
+        }
+
+        public void AddGamesOrder(List<Game> games, int orderId)
+        {
+            _repo.AddGamesOrder(games,orderId);
+        }
+
+        public decimal GetTotalPrice(List<Game> games)
+        {
+            decimal totalPrice = 0;
             foreach (var g in games)
             {
                 totalPrice += g.Price;

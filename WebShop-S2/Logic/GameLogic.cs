@@ -17,5 +17,10 @@ namespace Logic
         {
             return _repo.GetAllGames();
         }
+
+        public void AddGame(Game game)
+        {
+            _repo.AddGame(game);
+        }
     }
 }

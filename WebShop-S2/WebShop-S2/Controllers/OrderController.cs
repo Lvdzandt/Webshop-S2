@@ -13,6 +13,13 @@ namespace WebShop_S2.Controllers
         private readonly OrderLogic _logic = new OrderLogic();
 
         [HttpPost]
+        public IActionResult Order(Order order)
+        {
+            OrderViewModel model = new OrderViewModel {Order = order};
+            return View(model);
+        }
+
+        [HttpPost]
         public IActionResult OrderPage()
         {
             if (_logic.GetShoppingList().Count != 0)
@@ -24,10 +31,10 @@ namespace WebShop_S2.Controllers
                 model.Order = order;
                 model.TotalPrice = _logic.GetTotalPrice(model.Order.GameList);
                 model.Order.UserId = logic.GetUser(CurrUser.Username).Id;
-                
+
                 return View(model);
             }
-            
+
             return RedirectToAction("ShoppingList", "Order");
         }
         [HttpPost]
@@ -42,19 +49,14 @@ namespace WebShop_S2.Controllers
             order.UserId = logic.GetUser(CurrUser.Username).Id;
 
             _logic.AddOrder(order);
+            int orderId = _logic.GetOrderId();
+            _logic.AddGamesOrder(order.GameList, orderId);
             _logic.ClearShoppinglist();
             return RedirectToAction("Index", "Home");
         }
 
+
         
-        public IActionResult CheckOut(Order order)
-        {
-            order.GameList = _logic.GetShoppingList();
-            order.OrderStatus = OrderStatus.Waiting;
-            _logic.AddOrder(order);
-            _logic.ClearShoppinglist();
-            return RedirectToAction("Index","Home");
-        }
 
         public IActionResult ShoppingList()
         {

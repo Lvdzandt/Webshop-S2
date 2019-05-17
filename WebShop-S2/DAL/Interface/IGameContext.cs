@@ -7,5 +7,6 @@ namespace DAL.Interface
     {
         Game GetGame(int id);
         List<Game> GetAllGames();
+        void AddGame(Game game);
     }
 }

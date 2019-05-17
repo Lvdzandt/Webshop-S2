@@ -19,7 +19,8 @@ namespace WebShop_S2.Controllers
 
         public IActionResult Account()
         {
-            OrderLogic OrderLogic = new OrderLogic();
+            OrderLogic orderLogic = new OrderLogic();
+            GameLogic gameLogic = new GameLogic();
             var model = new AccountViewModel();
             var email = HttpContext.Session.GetString(SessionKeyName);
             var user = Logic.GetUser(email);
@@ -27,7 +28,22 @@ namespace WebShop_S2.Controllers
             model.Email = user.Email;
             model.Username = user.Username;
             model.Birthday = user.Birthday;
-            model.Orders = OrderLogic.GetAllOrderById(user.Id);
+            model.Orders = orderLogic.GetAllOrderById(user.Id);
+            foreach (var order in model.Orders)
+            {
+                foreach (var item in orderLogic.GetAllGames())
+                {
+                    if (item.Item2 == order.Id)
+                    {
+                        Game game = gameLogic.GetGame(item.Item1);
+                        order.GameList.Add(game);
+                        order.TotalPrice += game.Price;
+                    }
+                    
+                }
+            }
+            
+            
             model.Reviews = new List<Review>();
             model.WishList = WishList.GameList;
             return View(model);

@@ -18,5 +18,10 @@ namespace DAL.Repo
             return GameContext.GetAllGames();
         }
 
+        public void AddGame(Game game)
+        {
+            GameContext.AddGame(game);
+        }
+
     }
 }
