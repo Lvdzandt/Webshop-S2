@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using Model;
 
 namespace DAL.SQLContext
@@ -27,17 +26,20 @@ namespace DAL.SQLContext
                     {
                         while (reader.Read())
                         {
-
+                            order.Id = id;
+                            order.Address = Convert.ToString(reader["OrderAdress"]);
+                            order.OrderDate = Convert.ToDateTime(reader["OrderDate"]);
+                            Enum.TryParse(Convert.ToString(reader["OrderStatus"]), out OrderStatus orderStatus);
+                            order.OrderStatus = orderStatus;
                         }
                     }
 
                     conn.Close();
                 }
-                ;
             }
 
 
-            return null;
+            return order;
         }
 
         public void AddOrder(Order order)
@@ -49,9 +51,9 @@ namespace DAL.SQLContext
 
 
                 Command = new SqlCommand("AddOrder", conn) { CommandType = CommandType.StoredProcedure };
-                Command.Parameters.Add("@orderdate", SqlDbType.Date).Value = order.OrderDate;
+                Command.Parameters.Add("@orderDate", SqlDbType.Date).Value = order.OrderDate;
                 Command.Parameters.Add("@address", SqlDbType.NVarChar).Value = order.Address;
-                Command.Parameters.Add("@orderstatus", SqlDbType.NVarChar).Value = order.OrderStatus;
+                Command.Parameters.Add("@orderStatus", SqlDbType.NVarChar).Value = order.OrderStatus;
                 Command.Parameters.Add("@userId", SqlDbType.Int).Value = order.UserId;
 
                 Command.ExecuteNonQuery();
@@ -62,9 +64,9 @@ namespace DAL.SQLContext
             }
         }
 
-        public void AddGamesOrder(List<Game> games, int Id)
+        public void AddGamesOrder(List<Game> games, int id)
         {
-            int userId = Id;
+            int userId = id;
 
             foreach (var item in games)
             {
@@ -87,7 +89,7 @@ namespace DAL.SQLContext
 
         public int GetOrderId()
         {
-            int orderId = 0;
+            int orderId;
 
             using (var conn = ConnectDb.GetConnection())
             {
@@ -101,7 +103,7 @@ namespace DAL.SQLContext
 
         public List<Tuple<int,int>> GetAllGames()
         {
-            List<Tuple<int,int>> List = new List<Tuple<int, int>>();
+            List<Tuple<int,int>> list = new List<Tuple<int, int>>();
             using (var conn = ConnectDb.GetConnection())
             {
 
@@ -119,7 +121,7 @@ namespace DAL.SQLContext
                         {
                             var gameId = Convert.ToInt32(reader["GameID"]);
                             var orderId = Convert.ToInt32(reader["OrderID"]);
-                            List.Add(new Tuple<int, int>(gameId,orderId));
+                            list.Add(new Tuple<int, int>(gameId,orderId));
                         }
                     }
 
@@ -127,7 +129,7 @@ namespace DAL.SQLContext
                 }
             }
 
-            return List;
+            return list;
         }
 
         public List<Order> GetAllOrdersById(int userId)

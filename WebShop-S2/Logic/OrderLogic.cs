@@ -7,7 +7,7 @@ namespace Logic
 {
     public class OrderLogic
     {
-        private OrderRepository _repo = new OrderRepository();
+        private readonly OrderRepository _repo = new OrderRepository();
 
         public Order GetOrder(int id)
         {

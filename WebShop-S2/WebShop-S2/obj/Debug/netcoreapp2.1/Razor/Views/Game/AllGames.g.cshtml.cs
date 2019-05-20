@@ -75,7 +75,7 @@ using WebShop_S2.Models;
             WriteLiteral("        <div style=\"margin-right: 8%;margin-bottom:5%;float:left;border:double;width:25%;height:20%\">\r\n            <div style=\"margin:10%\">\r\n                ");
             EndContext();
             BeginContext(323, 127, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cc6e9d1dcb5c407d827eca61c84f84e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "be65661b496a4c5dab979d806140eb9c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

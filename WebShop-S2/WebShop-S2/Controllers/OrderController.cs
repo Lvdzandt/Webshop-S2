@@ -13,9 +13,20 @@ namespace WebShop_S2.Controllers
         private readonly OrderLogic _logic = new OrderLogic();
 
         [HttpPost]
-        public IActionResult Order(Order order)
+        public IActionResult Order(int orderId)
         {
-            OrderViewModel model = new OrderViewModel {Order = order};
+            OrderViewModel model = new OrderViewModel();
+            GameLogic gameLogic = new GameLogic();
+            model.Order = _logic.GetOrder(orderId);
+            foreach (var item in _logic.GetAllGames())
+            {
+                if (item.Item2 == orderId)
+                {
+                    Game game = gameLogic.GetGame(item.Item1);
+                    model.Order.GameList.Add(game);
+                    model.TotalPrice += game.Price;
+                }
+            }
             return View(model);
         }
 

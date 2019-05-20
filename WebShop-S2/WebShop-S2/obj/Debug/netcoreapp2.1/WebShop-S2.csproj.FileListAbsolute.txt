@@ -87,3 +87,4 @@ C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\WebShop-S2.pdb
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Game\AddGame.g.cshtml.cs
+C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\WebShop-S2\obj\Debug\netcoreapp2.1\Razor\Views\Order\Order.g.cshtml.cs

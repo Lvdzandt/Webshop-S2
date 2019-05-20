@@ -39,7 +39,7 @@
                 foreach (var item in Model.Orders)
                 {
                 <tr class="">
-                    @using (Html.BeginForm("Order", "Order", new { order = @Model.Orders[item.Id] }, FormMethod.Post))
+                    @using (Html.BeginForm("Order", "Order", new { orderId = item.Id }, FormMethod.Post))
                     {
                         <td><input type="submit" value="X" /></td>
                     }
