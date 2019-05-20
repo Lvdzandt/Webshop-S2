@@ -4,15 +4,30 @@
     ViewData["Title"] = "AllGames";
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+@*<script src="js/FilterGame.js"></script>*@
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function () {
+            var prod = ($(this).attr("data-prod-GameBox"));
+            var value = $(this).val().toLowerCase();
+            $("#myDIV").filter(function() {
+                $(".GameBox1").toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 <h2>AllGames</h2>
+<input id="myInput" type="text" placeholder="Search..">
 
 <div>
     @foreach (var item in Model.Games)
     {
-        <div style="margin-right: 8%;margin-bottom:5%;float:left;border:double;width:25%;height:20%">
+        string tableDiv = "GameBox" + item.Id;
+        <div class="@tableDiv" style="margin-right: 8%;margin-bottom:5%;float:left;border:double;width:25%;height:20%">
             <div style="margin:10%">
                 <img class="center-block" style="width:150px;height:100px;margin-bottom:20px" alt="/images/NoIMG.png" src="~/images/noImg.png">
-                <p style="float:left; margin-right: 20px;font-size:1vw"><a href="/Game/GamePage/@item.Id"> @item.Name</a></p>
+                <p id="myDIV" style="float:left; margin-right: 20px;font-size:1vw"><span class="bold"><a href="/Game/GamePage/@item.Id"> @item.Name</a></span></p>
                 <p style="float:right">@item.Price $</p>
                 <br /><hr /><br />
                 <p style="font-size:12px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
