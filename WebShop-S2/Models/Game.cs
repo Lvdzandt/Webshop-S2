@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 namespace Model
 {
-    public enum Tags
+    public enum Tag
     {
         Action,
+        RPG,
+        FPS,
+        Platformer
     }
 
     public class Game
@@ -14,7 +17,7 @@ namespace Model
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public List<Tags> GameTags  { get; set; }
+        public Tag GameTag  { get; set; }
         public DateTime ReleaseDate { get; set; }
     }
 }

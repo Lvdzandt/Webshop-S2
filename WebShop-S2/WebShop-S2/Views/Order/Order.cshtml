@@ -4,12 +4,31 @@
     ViewData["Title"] = "Order";
 }
 
-<h2>Order</h2>
+<h2>OrderID: @Model.Order.Id</h2>
 
 <div>
-    <h4>OrderViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <div>
+        <table id="TableHeader" class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var itemGame in Model.Order.GameList)
+            {
+                <tr class="">
+                    <td>@itemGame.Name</td>
+                    <td>@itemGame.Price</td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+    <dl style="float:right" class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.TotalPrice)
         </dt>
@@ -17,8 +36,8 @@
             @Html.DisplayFor(model => model.TotalPrice)
         </dd>
     </dl>
+    <br/><br/>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="">Back to List</a>
 </div>

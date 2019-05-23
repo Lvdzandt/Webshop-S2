@@ -1,7 +1,8 @@
-﻿jQuery(document).ready(function () {
+﻿$(document).ready(function () {
     $("#myInput").on("keyup", function () {
+        var elem = document.getElementById('myDIV');
         var value = $(this).val().toLowerCase();
-        $("div.GameBox .bold").filter(function () {
+        $(".GameBox").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
     });

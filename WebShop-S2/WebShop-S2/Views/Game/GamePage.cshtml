@@ -15,6 +15,7 @@
             <ul id="GameInfo">
                 <li><p><span class="glyphicon glyphicon-calendar"></span> @Model.Game.ReleaseDate.ToShortDateString()</p></li>
                 <li><p><span class="glyphicon glyphicon-star"></span>Score</p></li>
+                <li><p>@Model.Game.GameTag</p></li>
             </ul>
             <hr />
             @if (state)
