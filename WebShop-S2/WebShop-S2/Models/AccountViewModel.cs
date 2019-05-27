@@ -12,6 +12,6 @@ namespace WebShop_S2.Models
         public DateTime Birthday { get; set; }
         public List<Order> Orders { get; set; }
         public List<Review> Reviews { get; set; }
-        public List<Game> WishList { get; set; }
+        public List<WishList> WishList { get; set; }
     }
 }

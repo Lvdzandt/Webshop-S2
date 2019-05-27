@@ -66,8 +66,14 @@ namespace WebShop_S2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
-        
+        [HttpPost]
+        public IActionResult AddWishListItem(int gameId)
+        {
+            AccountLogic logic = new AccountLogic();
+            int userId = logic.GetUser(CurrUser.Username).Id;
+            _logic.AddWishListItem(gameId, userId);
+            return RedirectToAction("GamePage", "Game", new { Id = gameId });
+        }
 
         public IActionResult ShoppingList()
         {
@@ -97,19 +103,11 @@ namespace WebShop_S2.Controllers
             return RedirectToAction("GamePage", "Game", new { id });
         }
 
-        [HttpPost]
-        public IActionResult AddWishList(int id)
-        {
-            var logic = new GameLogic();
-            var game = logic.GetGame(id);
-            WishList.AddGame(game);
-            return RedirectToAction("GamePage", "Game", new { id });
-        }
 
         [HttpPost]
         public IActionResult RemoveWishList(int id)
         {
-            WishList.RemoveGame(id);
+            //RemoveGame(id);
             return RedirectToAction("Account", "Account");
         }
     }

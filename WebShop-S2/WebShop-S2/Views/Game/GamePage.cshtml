@@ -24,7 +24,7 @@
                 {
                     <input style="float:left;margin-right:10%" type="submit" value="ShoppingList" />
                 }
-                @using (Html.BeginForm("AddWishList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
+                @using (Html.BeginForm("AddWishListItem", "Order", new { gameId = @Model.Game.Id }, FormMethod.Post))
                 {
                     <input style="float:left" type="submit" value="WishList" />
                 }

@@ -45,7 +45,7 @@ namespace WebShop_S2.Controllers
             
             
             model.Reviews = new List<Review>();
-            model.WishList = WishList.GameList;
+            model.WishList = orderLogic.GetWishList(user.Id);
             return View(model);
         }
 
@@ -94,6 +94,8 @@ namespace WebShop_S2.Controllers
             ModelState.AddModelError("", "Email has already been taken");
             return View(model);
         }
+
+        
 
         public IActionResult Edit(int id)
         {

@@ -11,6 +11,51 @@ namespace DAL.SQLContext
     {
         public SqlCommand Command;
 
+
+        public List<WishList> GetWishList(int userId)
+        {
+            List<WishList> list = new List<WishList>();
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+                Command = new SqlCommand("GetWishList", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@userId", SqlDbType.Int).Value = userId;
+                using (var reader = Command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["GameId"]);
+                            string name = Convert.ToString(reader["Name"]);
+                            DateTime dateAdded = Convert.ToDateTime(reader["dateAdded"]);
+                            list.Add(new WishList(){ Id = id,Game = new Game(){Id = id,Name = name}, DateAdded = dateAdded});
+                        }
+                    }
+
+                    conn.Close();
+                }
+            }
+            return list;
+        }
+
+        public void AddWishListItem(int gameId, int userId)
+        {
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+                Command = new SqlCommand("AddWishList", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@gameId", SqlDbType.Int).Value = gameId;
+                Command.Parameters.Add("@userId", SqlDbType.Int).Value = userId;
+                Command.Parameters.Add("@dateAdded", SqlDbType.Date).Value = DateTime.Now.ToShortDateString();
+                Command.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
         public Order GetOrder(int id)
         {
             Order order = new Order();
@@ -46,9 +91,7 @@ namespace DAL.SQLContext
         {
             using (var conn = ConnectDb.GetConnection())
             {
-
                 conn.Open();
-
 
                 Command = new SqlCommand("AddOrder", conn) { CommandType = CommandType.StoredProcedure };
                 Command.Parameters.Add("@orderDate", SqlDbType.Date).Value = order.OrderDate;
@@ -57,10 +100,7 @@ namespace DAL.SQLContext
                 Command.Parameters.Add("@userId", SqlDbType.Int).Value = order.UserId;
 
                 Command.ExecuteNonQuery();
-
                 conn.Close();
-
-
             }
         }
 

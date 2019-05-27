@@ -13,6 +13,7 @@ namespace DAL.Repo
             return AccountContext.CheckLogin(email, password);
         }
 
+
         public bool CheckAccountTaken(string email)
         {
             return AccountContext.CheckAccountTaken(email);

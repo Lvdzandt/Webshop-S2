@@ -15,7 +15,14 @@ namespace DAL.Repo
 
         }
 
-
+        public List<WishList> GetWishList(int userId)
+        {
+            return OrderContext.GetWishList(userId);
+        }
+        public void AddWishListItem(int gameId, int userId)
+        {
+            OrderContext.AddWishListItem(gameId, userId);
+        }
         public Order GetOrder(int id)
         {
             return OrderContext.GetOrder(id);

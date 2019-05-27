@@ -1,42 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Model
 {
-    public static class WishList
+    public class WishList
     {
-        public static List<Game> GameList { get; set; }
-
-        static WishList()
-        {
-            GameList = new List<Game>();
-        }
-
-        public static void RemoveGame(int id)
-        {
-            foreach (var item in GameList)
-            {
-                if (item.Id == id)
-                {
-                    GameList.Remove(item);
-                    break;
-                }
-            }
-        }
-
-        public static void AddGame(Game game)
-        {
-            bool Double = false;
-            foreach (var item in GameList)
-            {
-                if (item.Name == game.Name)
-                {
-                    Double = true;
-                }
-            }
-            if (!Double)
-            {
-                GameList.Add(game);
-            }
-        }
+        public int Id { get; set; }
+        public Game Game { get; set; }
+        public DateTime DateAdded { get; set; }
+        
+        
+        
     }
 }

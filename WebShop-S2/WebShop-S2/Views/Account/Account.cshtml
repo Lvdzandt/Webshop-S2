@@ -110,8 +110,8 @@
                 foreach (var item in Model.WishList)
                 {
                     <tr class="">
-                        <td>@item.Name</td>
-                        <td>@item.ReleaseDate.ToShortDateString()</td>
+                        <td>@item.Game.Name</td>
+                        <td>@item.DateAdded.ToShortDateString()</td>
                         @using (Html.BeginForm("RemoveWishList", "Order", new { id = @item.Id}, FormMethod.Post))
                         {
                             <td><input type="submit" value="X"/></td>

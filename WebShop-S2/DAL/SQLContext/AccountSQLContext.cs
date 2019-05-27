@@ -10,6 +10,7 @@ namespace DAL.SQLContext
     {
         public SqlCommand Command;
 
+
         public bool CheckLogin(string email, string password)
         {
             int account;
