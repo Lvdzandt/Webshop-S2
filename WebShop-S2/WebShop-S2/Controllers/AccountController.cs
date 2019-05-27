@@ -72,6 +72,7 @@ namespace WebShop_S2.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
+            ShoppingCart.ClearList();
             return RedirectToAction("Index", "Home");
         }
 

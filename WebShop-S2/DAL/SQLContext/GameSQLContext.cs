@@ -48,7 +48,7 @@ namespace DAL.SQLContext
                             var price = Convert.ToDecimal(reader["Price"]);
                             var description = Convert.ToString(reader["Description"]);
                             var release = Convert.ToDateTime(reader["ReleaseDate"]);
-                            Enum.TryParse(Convert.ToString(reader["Name"]), out Tag gameTag);
+                            var gameTag = Convert.ToString(reader["TagName"]);
                             output.Id = id;
                             output.Name = name;
                             output.Price = price;
@@ -84,7 +84,7 @@ namespace DAL.SQLContext
                             var price = Convert.ToDecimal(reader["Price"]);
                             var description = Convert.ToString(reader["Description"]);
                             var release = Convert.ToDateTime(reader["ReleaseDate"]);
-                            Enum.TryParse(Convert.ToString(reader["Name"]), out Tag gameTag);
+                            var gameTag = Convert.ToString(reader["TagName"]);
                             output.Add(new Game() { Id = id, Name = name, Price = price, Description = description, ReleaseDate = release, GameTag = gameTag});
                         }
                     }

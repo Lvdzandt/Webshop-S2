@@ -17,7 +17,7 @@ namespace DAL.SQLContext
             {
                 conn.Open();
 
-                Command = new SqlCommand("CheckLogin", conn) {CommandType = CommandType.StoredProcedure};
+                Command = new SqlCommand("CheckLogin", conn) { CommandType = CommandType.StoredProcedure };
                 Command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
                 Command.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
 
@@ -26,14 +26,7 @@ namespace DAL.SQLContext
 
                 conn.Close();
             }
-            if (account == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return account == 1;
         }
 
         public bool CheckAccountTaken(string email)
@@ -43,7 +36,7 @@ namespace DAL.SQLContext
             {
                 conn.Open();
 
-                Command = new SqlCommand("CheckAccountTaken", conn) {CommandType = CommandType.StoredProcedure};
+                Command = new SqlCommand("CheckAccountTaken", conn) { CommandType = CommandType.StoredProcedure };
                 Command.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
 
                 account = (int)Command.ExecuteScalar();
@@ -51,97 +44,92 @@ namespace DAL.SQLContext
 
                 conn.Close();
             }
-            if (account == 1)
-            {
-                return true;
-            }
-
-            return false;
+            return account == 1;
         }
 
         public void RegisterAccount(User account)
         {
             using (var conn = ConnectDb.GetConnection())
             {
-               
-                    conn.Open();
+
+                conn.Open();
 
 
-                    Command = new SqlCommand("RegisterAccount", conn) {CommandType = CommandType.StoredProcedure};
-                    Command.Parameters.Add("@username", SqlDbType.NVarChar).Value = account.Username;
-                    Command.Parameters.Add("@password", SqlDbType.NVarChar).Value = account.Password;
-                    Command.Parameters.Add("@email", SqlDbType.NVarChar).Value = account.Email;
-                    Command.Parameters.Add("@birthdate", SqlDbType.Date).Value = account.Birthday;
-                    Command.ExecuteNonQuery();
+                Command = new SqlCommand("RegisterAccount", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@username", SqlDbType.NVarChar).Value = account.Username;
+                Command.Parameters.Add("@password", SqlDbType.NVarChar).Value = account.Password;
+                Command.Parameters.Add("@email", SqlDbType.NVarChar).Value = account.Email;
+                Command.Parameters.Add("@birthdate", SqlDbType.Date).Value = account.Birthday;
+                Command.ExecuteNonQuery();
 
-                    conn.Close();
-                
-                
+                conn.Close();
+
+
             }
         }
 
         public User GetUser(string email)
         {
             var user = new User();
-                using (var conn = ConnectDb.GetConnection())
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+
+                Command = new SqlCommand("GetAccountEmail", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
+                Command.ExecuteNonQuery();
+                using (var reader = Command.ExecuteReader())
                 {
-                    conn.Open();
-
-
-                    Command = new SqlCommand("GetAccountEmail", conn) {CommandType = CommandType.StoredProcedure};
-                    Command.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
-                    Command.ExecuteNonQuery();
-                    using (var reader = Command.ExecuteReader())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                var id = Convert.ToInt32(reader["ID"]);
-                                var name = Convert.ToString(reader["UserName"]);
-                                email = Convert.ToString(reader["Email"]);
-                                var date = Convert.ToDateTime(reader["Birthdate"]);
-                                user = new User(id, email, name, date);
-                            }
+                            var id = Convert.ToInt32(reader["ID"]);
+                            var name = Convert.ToString(reader["UserName"]);
+                            email = Convert.ToString(reader["Email"]);
+                            var date = Convert.ToDateTime(reader["Birthdate"]);
+                            user = new User(id, email, name, date);
                         }
-                        conn.Close();
                     }
-
+                    conn.Close();
                 }
 
-                return user;
+            }
+
+            return user;
         }
 
         public User GetUser(int id)
         {
             var user = new User();
-            
-                using (var conn = ConnectDb.GetConnection())
+
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+
+                Command = new SqlCommand("GetAccountID", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                Command.ExecuteNonQuery();
+                using (var reader = Command.ExecuteReader())
                 {
-                    conn.Open();
-
-
-                    Command = new SqlCommand("GetAccountID", conn) {CommandType = CommandType.StoredProcedure};
-                    Command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                    Command.ExecuteNonQuery();
-                    using (var reader = Command.ExecuteReader())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                id = Convert.ToInt32(reader["ID"]);
-                                var name = Convert.ToString(reader["UserName"]);
-                                var email = Convert.ToString(reader["Email"]);
-                                var date = Convert.ToDateTime(reader["Birthdate"]);
-                                user = new User(id, email, name, date);
-                            }
+                            id = Convert.ToInt32(reader["ID"]);
+                            var name = Convert.ToString(reader["UserName"]);
+                            var email = Convert.ToString(reader["Email"]);
+                            var date = Convert.ToDateTime(reader["Birthdate"]);
+                            user = new User(id, email, name, date);
                         }
-                        conn.Close();
                     }
-
+                    conn.Close();
                 }
-            
+
+            }
+
 
             return user;
         }
@@ -150,18 +138,18 @@ namespace DAL.SQLContext
         {
             using (var conn = ConnectDb.GetConnection())
             {
-                
-                    conn.Open();
+
+                conn.Open();
 
 
-                    Command = new SqlCommand("UpdateAccount", conn) {CommandType = CommandType.StoredProcedure};
-                    Command.Parameters.Add("@id", SqlDbType.Int).Value = user.Id;
-                    Command.Parameters.Add("@username", SqlDbType.NVarChar).Value = user.Username;
-                    Command.Parameters.Add("@birthdate", SqlDbType.Date).Value = user.Birthday;
-                    Command.ExecuteNonQuery();
+                Command = new SqlCommand("UpdateAccount", conn) { CommandType = CommandType.StoredProcedure };
+                Command.Parameters.Add("@id", SqlDbType.Int).Value = user.Id;
+                Command.Parameters.Add("@username", SqlDbType.NVarChar).Value = user.Username;
+                Command.Parameters.Add("@birthdate", SqlDbType.Date).Value = user.Birthday;
+                Command.ExecuteNonQuery();
 
-                    conn.Close();
-                    
+                conn.Close();
+
             }
         }
     }
