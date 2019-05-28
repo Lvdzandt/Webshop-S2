@@ -105,9 +105,11 @@ namespace WebShop_S2.Controllers
 
 
         [HttpPost]
-        public IActionResult RemoveWishList(int id)
+        public IActionResult RemoveWishList(int gameId)
         {
-            //RemoveGame(id);
+            AccountLogic logic = new AccountLogic();
+            int userId = logic.GetUser(CurrUser.Username).Id;
+            _logic.RemoveWishListItem(gameId, userId);
             return RedirectToAction("Account", "Account");
         }
     }

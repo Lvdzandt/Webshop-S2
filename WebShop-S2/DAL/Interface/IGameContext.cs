@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using System;
+using Model;
 using System.Collections.Generic;
 
 namespace DAL.Interface
@@ -8,5 +9,6 @@ namespace DAL.Interface
         Game GetGame(int id);
         List<Game> GetAllGames();
         void AddGame(Game game);
+        List<Tuple<string, int>> GetGameCount();
     }
 }

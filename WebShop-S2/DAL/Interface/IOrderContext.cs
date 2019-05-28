@@ -15,6 +15,7 @@ namespace DAL.Interface
         int GetOrderId();
         List<Tuple<int, int>> GetAllGames();
         void AddWishListItem(int gameId, int userId);
+        void RemoveWishListItem(int gameId, int userId);
 
     }
 }

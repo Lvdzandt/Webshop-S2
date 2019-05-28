@@ -112,7 +112,7 @@
                     <tr class="">
                         <td>@item.Game.Name</td>
                         <td>@item.DateAdded.ToShortDateString()</td>
-                        @using (Html.BeginForm("RemoveWishList", "Order", new { id = @item.Id}, FormMethod.Post))
+                        @using (Html.BeginForm("RemoveWishList", "Order", new { gameId = @item.Game.Id}, FormMethod.Post))
                         {
                             <td><input type="submit" value="X"/></td>
                         }

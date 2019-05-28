@@ -22,6 +22,7 @@ namespace DAL.SQLContext
                 Command.Parameters.Add("@Price", SqlDbType.Decimal).Value = game.Price;
                 Command.Parameters.Add("@Description", SqlDbType.Text).Value = game.Description;
                 Command.Parameters.Add("@ReleaseDate", SqlDbType.Date).Value = game.ReleaseDate;
+                Command.Parameters.Add("@TagName", SqlDbType.NVarChar).Value = game.GameTag;
                 Command.ExecuteNonQuery();
             }
         }
@@ -92,6 +93,32 @@ namespace DAL.SQLContext
                 }
             }
             return output;
+        }
+
+        public List<Tuple<string, int>> GetGameCount()
+        {
+            List<Tuple<string,int>> list = new List<Tuple<string, int>>();
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
+
+                Command = new SqlCommand("GameTagCount", conn) { CommandType = CommandType.StoredProcedure };
+
+                using (var reader = Command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            int count = Convert.ToInt32(reader["GAMECOUNT"]);
+                            string name = Convert.ToString(reader["TagName"]);
+                           list.Add(new Tuple<string, int>(name,count));
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            return list;
         }
     }
 }

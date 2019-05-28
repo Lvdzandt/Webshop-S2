@@ -10,7 +10,7 @@
 <h2>AllGames</h2>
 <input id="myInput" type="text" placeholder="Search..">
 
-<div id ="GameInfo">
+<div id="GameInfo">
     @foreach (var item in Model.Games)
     {
         string tableDiv = "GameBox";
@@ -26,4 +26,25 @@
         </div>
     }
 </div>
+<div>
+    @{
+        <table id="TableHeader" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td>Game Tag</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.TagCount)
+                {
+                    <tr class="">
+                        <td>@item.Item1</td>
+                        <td>@item.Item2</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
+    }
+</div>

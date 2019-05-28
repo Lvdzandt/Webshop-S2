@@ -9,6 +9,11 @@ namespace Logic
     {
         private readonly OrderRepository _repo = new OrderRepository();
 
+        public void RemoveWishListItem(int gameId, int userId)
+        {
+            _repo.RemoveWishListItem(gameId, userId);
+        }
+
         public List<WishList> GetWishList(int userId)
         {
             return _repo.GetWishList(userId);

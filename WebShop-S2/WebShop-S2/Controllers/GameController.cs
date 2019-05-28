@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using System.Data;
+using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using WebShop_S2.Models;
@@ -29,6 +30,7 @@ namespace WebShop_S2.Controllers
             Game game = new Game();
             game.Name = model.GameName;
             game.Price = model.Price;
+            game.GameTag = model.GameTag;
             game.Description = model.Description;
             game.ReleaseDate = model.ReleaseDate;
             Logic.AddGame(game);
@@ -38,6 +40,7 @@ namespace WebShop_S2.Controllers
         public IActionResult AllGames()
         {
             AllGameViewModel model = new AllGameViewModel {Games = Logic.GetAllGames()};
+            model.TagCount = Logic.GetGameCount();
             return View(model);
         }
 

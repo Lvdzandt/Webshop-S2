@@ -15,6 +15,11 @@ namespace DAL.Repo
 
         }
 
+        public void RemoveWishListItem(int gameId, int userId)
+        {
+            OrderContext.RemoveWishListItem(gameId, userId);
+        }
+
         public List<WishList> GetWishList(int userId)
         {
             return OrderContext.GetWishList(userId);

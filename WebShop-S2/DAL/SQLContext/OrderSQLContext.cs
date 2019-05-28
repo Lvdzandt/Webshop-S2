@@ -1,9 +1,9 @@
 ﻿using DAL.Interface;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Model;
 
 namespace DAL.SQLContext
 {
@@ -11,7 +11,21 @@ namespace DAL.SQLContext
     {
         public SqlCommand Command;
 
+        public void RemoveWishListItem(int gameId, int userId)
+        {
+            using (var conn = ConnectDb.GetConnection())
+            {
+                conn.Open();
 
+                Command = new SqlCommand("RemoveWishListItem", conn) {CommandType = CommandType.StoredProcedure};
+                Command.Parameters.Add("@gameId", SqlDbType.Int).Value = gameId;
+                Command.Parameters.Add("@userId", SqlDbType.Int).Value = userId;
+                Command.ExecuteNonQuery();
+
+                conn.Close();
+
+            }
+        }
         public List<WishList> GetWishList(int userId)
         {
             List<WishList> list = new List<WishList>();
@@ -27,10 +41,11 @@ namespace DAL.SQLContext
                     {
                         while (reader.Read())
                         {
-                            int id = Convert.ToInt32(reader["GameId"]);
+
+                            int gameId = Convert.ToInt32(reader["GameId"]);
                             string name = Convert.ToString(reader["Name"]);
                             DateTime dateAdded = Convert.ToDateTime(reader["dateAdded"]);
-                            list.Add(new WishList(){ Id = id,Game = new Game(){Id = id,Name = name}, DateAdded = dateAdded});
+                            list.Add(new WishList() { Id = gameId, Game = new Game() { Id = gameId, Name = name }, DateAdded = dateAdded });
                         }
                     }
 
@@ -141,17 +156,17 @@ namespace DAL.SQLContext
             return orderId;
         }
 
-        public List<Tuple<int,int>> GetAllGames()
+        public List<Tuple<int, int>> GetAllGames()
         {
-            List<Tuple<int,int>> list = new List<Tuple<int, int>>();
+            List<Tuple<int, int>> list = new List<Tuple<int, int>>();
             using (var conn = ConnectDb.GetConnection())
             {
 
                 conn.Open();
 
 
-                Command = new SqlCommand("GetOrderGames", conn) {CommandType = CommandType.StoredProcedure};
-                
+                Command = new SqlCommand("GetOrderGames", conn) { CommandType = CommandType.StoredProcedure };
+
                 Command.ExecuteNonQuery();
                 using (var reader = Command.ExecuteReader())
                 {
@@ -161,7 +176,7 @@ namespace DAL.SQLContext
                         {
                             var gameId = Convert.ToInt32(reader["GameID"]);
                             var orderId = Convert.ToInt32(reader["OrderID"]);
-                            list.Add(new Tuple<int, int>(gameId,orderId));
+                            list.Add(new Tuple<int, int>(gameId, orderId));
                         }
                     }
 

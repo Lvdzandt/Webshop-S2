@@ -1,4 +1,5 @@
-﻿using DAL.Repo;
+﻿using System;
+using DAL.Repo;
 using Model;
 using System.Collections.Generic;
 
@@ -21,6 +22,11 @@ namespace Logic
         public void AddGame(Game game)
         {
             _repo.AddGame(game);
+        }
+
+        public List<Tuple<string, int>> GetGameCount()
+        {
+            return _repo.GetGameCount();
         }
     }
 }

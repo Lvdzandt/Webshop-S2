@@ -1,4 +1,5 @@
-﻿using DAL.Interface;
+﻿using System;
+using DAL.Interface;
 using DAL.SQLContext;
 using Model;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace DAL.Repo
         public void AddGame(Game game)
         {
             GameContext.AddGame(game);
+        }
+
+        public List<Tuple<string, int>> GetGameCount()
+        {
+            return GameContext.GetGameCount();
         }
 
     }
