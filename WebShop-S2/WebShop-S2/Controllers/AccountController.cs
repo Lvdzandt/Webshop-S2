@@ -39,11 +39,8 @@ namespace WebShop_S2.Controllers
                         order.GameList.Add(game);
                         order.TotalPrice += game.Price;
                     }
-                    
                 }
             }
-            
-            
             model.Reviews = new List<Review>();
             model.WishList = orderLogic.GetWishList(user.Id);
             return View(model);
