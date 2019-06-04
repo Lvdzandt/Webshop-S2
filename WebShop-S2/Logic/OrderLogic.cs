@@ -38,7 +38,7 @@ namespace Logic
             _repo.AddWishListItem(gameId, userId);
         }
 
-        public void ClearShoppinglist()
+        public void ClearShoppingList()
         {
             ShoppingCart.ClearList();
         }

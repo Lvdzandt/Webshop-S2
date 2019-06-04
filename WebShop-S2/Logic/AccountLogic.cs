@@ -21,12 +21,10 @@ namespace Logic
             }
         }
 
-
-
         public bool CheckLogin(string email, string password)
         {
-            string hashpass = PasswordHash(password);
-            return _repo.CheckLogin(email, hashpass);
+            string passwordHash = PasswordHash(password);
+            return _repo.CheckLogin(email, passwordHash);
         }
 
         public bool CheckAccountTaken(string email)
@@ -34,10 +32,10 @@ namespace Logic
             return _repo.CheckAccountTaken(email);
         }
 
-        public void RegisterAccount(User newacc)
+        public void RegisterAccount(User newUser)
         {
-            newacc.Password = PasswordHash(newacc.Password);
-            _repo.RegisterAccount(newacc);
+            newUser.Password = PasswordHash(newUser.Password);
+            _repo.RegisterAccount(newUser);
         }
         public User GetUser(int id)
         {

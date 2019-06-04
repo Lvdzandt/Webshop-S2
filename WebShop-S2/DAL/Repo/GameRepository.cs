@@ -8,7 +8,13 @@ namespace DAL.Repo
 {
     public class GameRepository
     {
-        public readonly IGameContext GameContext = new GameSqlContext(); 
+        public readonly IGameContext GameContext = new GameSqlContext();
+
+        public GameRepository()
+        {
+
+        }
+
         public Game GetGame(int id)
         {
             return GameContext.GetGame(id);

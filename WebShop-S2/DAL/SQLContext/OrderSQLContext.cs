@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace DAL.SQLContext
 {
-    class OrderSqlContext : IOrderContext
+    public class OrderSqlContext : IOrderContext
     {
         public SqlCommand Command;
 

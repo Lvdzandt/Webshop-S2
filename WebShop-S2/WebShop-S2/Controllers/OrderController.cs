@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Logic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging.Abstractions;
 using Model;
 using WebShop_S2.Models;
 
@@ -10,19 +9,22 @@ namespace WebShop_S2.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly OrderLogic _logic = new OrderLogic();
+        public readonly OrderLogic OrderLogic = new OrderLogic();
+
+        public readonly GameLogic GameLogic = new GameLogic();
+
+        public readonly AccountLogic AccountLogic = new AccountLogic();
 
         [HttpPost]
         public IActionResult Order(int orderId)
         {
             OrderViewModel model = new OrderViewModel();
-            GameLogic gameLogic = new GameLogic();
-            model.Order = _logic.GetOrder(orderId);
-            foreach (var item in _logic.GetAllGames())
+            model.Order = OrderLogic.GetOrder(orderId);
+            foreach (var item in OrderLogic.GetAllGames())
             {
                 if (item.Item2 == orderId)
                 {
-                    Game game = gameLogic.GetGame(item.Item1);
+                    Game game = GameLogic.GetGame(item.Item1);
                     model.Order.GameList.Add(game);
                     model.TotalPrice += game.Price;
                 }
@@ -33,15 +35,15 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult OrderPage()
         {
-            if (_logic.GetShoppingList().Count != 0)
+            if (OrderLogic.GetShoppingList().Count != 0)
             {
-                AccountLogic logic = new AccountLogic();
                 OrderViewModel model = new OrderViewModel();
                 Order order = new Order();
-                order.GameList = _logic.GetShoppingList();
+                var email = HttpContext.Session.GetString("_Name");
+                order.GameList = OrderLogic.GetShoppingList();
                 model.Order = order;
-                model.TotalPrice = _logic.GetTotalPrice(model.Order.GameList);
-                model.Order.UserId = logic.GetUser(CurrUser.Username).Id;
+                model.TotalPrice = OrderLogic.GetTotalPrice(model.Order.GameList);
+                model.Order.UserId = AccountLogic.GetUser(email).Id;
 
                 return View(model);
             }
@@ -51,35 +53,35 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Checkout(OrderViewModel model)
         {
-            AccountLogic logic = new AccountLogic();
             Order order = new Order();
-            order.GameList = _logic.GetShoppingList();
+            order.GameList = OrderLogic.GetShoppingList();
             order.OrderStatus = OrderStatus.Waiting;
             order.Address = model.Order.Address;
             order.OrderDate = model.Order.OrderDate;
-            order.UserId = logic.GetUser(CurrUser.Username).Id;
+            var email = HttpContext.Session.GetString("_Name");
+            order.UserId = AccountLogic.GetUser(email).Id;
 
-            _logic.AddOrder(order);
-            int orderId = _logic.GetOrderId();
-            _logic.AddGamesOrder(order.GameList, orderId);
-            _logic.ClearShoppinglist();
+            OrderLogic.AddOrder(order);
+            int orderId = OrderLogic.GetOrderId();
+            OrderLogic.AddGamesOrder(order.GameList, orderId);
+            OrderLogic.ClearShoppingList();
             return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
         public IActionResult AddWishListItem(int gameId)
         {
-            AccountLogic logic = new AccountLogic();
-            int userId = logic.GetUser(CurrUser.Username).Id;
-            _logic.AddWishListItem(gameId, userId);
+            var email = HttpContext.Session.GetString("_Name");
+            int userId = AccountLogic.GetUser(email).Id;
+            OrderLogic.AddWishListItem(gameId, userId);
             return RedirectToAction("GamePage", "Game", new { Id = gameId });
         }
 
         public IActionResult ShoppingList()
         {
-            ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = _logic.GetShoppingList() };
-            model.TotalPrice = _logic.GetTotalPrice(model.ShoppingList);
-            if (_logic.GetShoppingList().Count == 0)
+            ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = OrderLogic.GetShoppingList() };
+            model.TotalPrice = OrderLogic.GetTotalPrice(model.ShoppingList);
+            if (OrderLogic.GetShoppingList().Count == 0)
             {
                 ModelState.AddModelError("CustomError", "Cart is empty, please add an order before you checkout");
             }
@@ -90,15 +92,14 @@ namespace WebShop_S2.Controllers
         public IActionResult ShoppingList(int id)
         {
             ShoppingCart.RemoveGame(id);
-            ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = _logic.GetShoppingList() };
+            ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = OrderLogic.GetShoppingList() };
             return View(model);
         }
 
         [HttpPost]
         public IActionResult AddShoppinglist(int id)
         {
-            var logic = new GameLogic();
-            var game = logic.GetGame(id);
+            var game = GameLogic.GetGame(id);
             ShoppingCart.AddGame(game);
             return RedirectToAction("GamePage", "Game", new { id });
         }
@@ -107,9 +108,9 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult RemoveWishList(int gameId)
         {
-            AccountLogic logic = new AccountLogic();
-            int userId = logic.GetUser(CurrUser.Username).Id;
-            _logic.RemoveWishListItem(gameId, userId);
+            var email = HttpContext.Session.GetString("_Name");
+            int userId = AccountLogic.GetUser(email).Id;
+            OrderLogic.RemoveWishListItem(gameId, userId);
             return RedirectToAction("Account", "Account");
         }
     }

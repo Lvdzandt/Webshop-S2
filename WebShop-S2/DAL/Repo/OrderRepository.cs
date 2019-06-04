@@ -9,10 +9,10 @@ namespace DAL.Repo
 {
     public class OrderRepository
     {
-        public  IOrderContext OrderContext = new OrderSqlContext();
+        public IOrderContext OrderContext = new OrderSqlContext();
         public OrderRepository()
         {
-
+            
         }
 
         public void RemoveWishListItem(int gameId, int userId)

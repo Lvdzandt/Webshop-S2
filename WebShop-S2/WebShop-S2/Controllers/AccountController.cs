@@ -11,7 +11,9 @@ namespace WebShop_S2.Controllers
     [SuppressMessage("ReSharper", "SuggestVarOrType_SimpleTypes")]
     public class AccountController : Controller
     {
-        public readonly AccountLogic Logic = new AccountLogic();
+        readonly AccountLogic _accountLogic = new AccountLogic();
+        readonly OrderLogic _orderLogic = new OrderLogic();
+        readonly GameLogic _gameLogic = new GameLogic();
 
         public const string SessionKeyName = "_Name";
 
@@ -19,30 +21,28 @@ namespace WebShop_S2.Controllers
 
         public IActionResult Account()
         {
-            OrderLogic orderLogic = new OrderLogic();
-            GameLogic gameLogic = new GameLogic();
             var model = new AccountViewModel();
             var email = HttpContext.Session.GetString(SessionKeyName);
-            var user = Logic.GetUser(email);
+            var user = _accountLogic.GetUser(email);
             model.Id = user.Id;
             model.Email = user.Email;
             model.Username = user.Username;
             model.Birthday = user.Birthday;
-            model.Orders = orderLogic.GetAllOrderById(user.Id);
+            model.Orders = _orderLogic.GetAllOrderById(user.Id);
             foreach (var order in model.Orders)
             {
-                foreach (var item in orderLogic.GetAllGames())
+                foreach (var item in _orderLogic.GetAllGames())
                 {
                     if (item.Item2 == order.Id)
                     {
-                        Game game = gameLogic.GetGame(item.Item1);
+                        Game game = _gameLogic.GetGame(item.Item1);
                         order.GameList.Add(game);
                         order.TotalPrice += game.Price;
                     }
                 }
             }
             model.Reviews = new List<Review>();
-            model.WishList = orderLogic.GetWishList(user.Id);
+            model.WishList = _orderLogic.GetWishList(user.Id);
             return View(model);
         }
 
@@ -56,9 +56,8 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            if (Logic.CheckLogin(model.Email, model.Password))
+            if (_accountLogic.CheckLogin(model.Email, model.Password))
             {
-                CurrUser.Username = model.Email;
                 HttpContext.Session.SetString(SessionKeyName, model.Email);
                 return RedirectToAction("Index", "Home");
             }
@@ -82,10 +81,10 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Register(RegisterViewModel model)
         {
-            if (!Logic.CheckAccountTaken(model.Email))
+            if (!_accountLogic.CheckAccountTaken(model.Email))
             {
                 User user = new User(model.Email, model.Username, model.Birthday, model.Password);
-                Logic.RegisterAccount(user);
+                _accountLogic.RegisterAccount(user);
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Email has already been taken");
@@ -97,7 +96,7 @@ namespace WebShop_S2.Controllers
         public IActionResult Edit(int id)
         {
             EditAccountModel model = new EditAccountModel();
-            User user = Logic.GetUser(id);
+            User user = _accountLogic.GetUser(id);
             model.Id = id;
             model.Username = user.Username;
             model.Birthday = user.Birthday;
@@ -108,7 +107,7 @@ namespace WebShop_S2.Controllers
         public IActionResult Edit(EditAccountModel model)
         {
             User user = new User() { Id = model.Id, Username = model.Username, Birthday = model.Birthday };
-            Logic.UpdateUser(user);
+            _accountLogic.UpdateUser(user);
             return RedirectToAction("Account", "Account");
         }
     }

@@ -8,6 +8,11 @@ namespace DAL.Repo
     {
         public readonly IAccountContext AccountContext = new AccountSqlContext();
 
+        public AccountRepository()
+        {
+
+        }
+
         public bool CheckLogin(string email, string password)
         {
             return AccountContext.CheckLogin(email, password);

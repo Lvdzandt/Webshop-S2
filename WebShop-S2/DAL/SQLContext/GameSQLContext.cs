@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace DAL.SQLContext
 {
-    internal class GameSqlContext : IGameContext
+    public class GameSqlContext : IGameContext
     {
         public SqlCommand Command;
 
