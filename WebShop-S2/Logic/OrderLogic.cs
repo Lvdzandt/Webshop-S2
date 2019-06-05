@@ -9,6 +9,15 @@ namespace Logic
     {
         private readonly OrderRepository _repo = new OrderRepository();
 
+        public void AddShoppingCartGame(Game game)
+        {
+            ShoppingCart.AddGame(game);
+        }
+
+        public void RemoveShoppingCartGame(int id)
+        {
+            ShoppingCart.RemoveGame(id);
+        }
         public void RemoveWishListItem(int gameId, int userId)
         {
             _repo.RemoveWishListItem(gameId, userId);

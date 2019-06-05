@@ -1,0 +1,32 @@
+﻿div.GameBox {
+    margin-right: 8%;
+    margin-bottom: 5%;
+    float: left;
+    border: double;
+    width: 25%;
+    height: 20%;
+}
+
+img.center-block {
+    width:150px;
+    height:100px;
+    margin-bottom:20px
+}
+
+p.Name {
+    float:left;
+    margin-right:20px;
+    font-size:1vw;
+}
+
+p.text {
+    font-size: 12px;
+}
+
+p.Price {
+    float: right;
+}
+
+div.GameInfo {
+    margin:10%
+}

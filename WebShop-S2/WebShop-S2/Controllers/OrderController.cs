@@ -1,5 +1,4 @@
-﻿using System;
-using Logic;
+﻿using Logic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -18,8 +17,7 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Order(int orderId)
         {
-            OrderViewModel model = new OrderViewModel();
-            model.Order = OrderLogic.GetOrder(orderId);
+            OrderViewModel model = new OrderViewModel {Order = OrderLogic.GetOrder(orderId)};
             foreach (var item in OrderLogic.GetAllGames())
             {
                 if (item.Item2 == orderId)
@@ -53,11 +51,13 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult Checkout(OrderViewModel model)
         {
-            Order order = new Order();
-            order.GameList = OrderLogic.GetShoppingList();
-            order.OrderStatus = OrderStatus.Waiting;
-            order.Address = model.Order.Address;
-            order.OrderDate = model.Order.OrderDate;
+            Order order = new Order
+            {
+                GameList = OrderLogic.GetShoppingList(),
+                OrderStatus = OrderStatus.Waiting,
+                Address = model.Order.Address,
+                OrderDate = model.Order.OrderDate
+            };
             var email = HttpContext.Session.GetString("_Name");
             order.UserId = AccountLogic.GetUser(email).Id;
 
@@ -91,7 +91,7 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult ShoppingList(int id)
         {
-            ShoppingCart.RemoveGame(id);
+            OrderLogic.RemoveShoppingCartGame(id);
             ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = OrderLogic.GetShoppingList() };
             return View(model);
         }
@@ -100,7 +100,7 @@ namespace WebShop_S2.Controllers
         public IActionResult AddShoppinglist(int id)
         {
             var game = GameLogic.GetGame(id);
-            ShoppingCart.AddGame(game);
+            OrderLogic.AddShoppingCartGame(game);
             return RedirectToAction("GamePage", "Game", new { id });
         }
 

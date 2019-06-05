@@ -1,5 +1,4 @@
-﻿using System.Data;
-using Logic;
+﻿using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using WebShop_S2.Models;
@@ -27,20 +26,24 @@ namespace WebShop_S2.Controllers
         [HttpPost]
         public IActionResult AddGames(AddGameViewModel model)
         {
-            Game game = new Game();
-            game.Name = model.GameName;
-            game.Price = model.Price;
-            game.GameTag = model.GameTag;
-            game.Description = model.Description;
-            game.ReleaseDate = model.ReleaseDate;
+            Game game = new Game
+            {
+                Name = model.GameName,
+                Price = model.Price,
+                GameTag = model.GameTag,
+                Description = model.Description,
+                ReleaseDate = model.ReleaseDate
+            };
             Logic.AddGame(game);
             return RedirectToAction("AllGames","Game");
         }
 
         public IActionResult AllGames()
         {
-            AllGameViewModel model = new AllGameViewModel {Games = Logic.GetAllGames()};
-            model.TagCount = Logic.GetGameCount();
+            AllGameViewModel model = new AllGameViewModel
+            {
+                Games = Logic.GetAllGames(), TagCount = Logic.GetGameCount()
+            };
             return View(model);
         }
 

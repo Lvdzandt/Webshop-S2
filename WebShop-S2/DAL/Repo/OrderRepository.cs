@@ -12,7 +12,7 @@ namespace DAL.Repo
         public IOrderContext OrderContext = new OrderSqlContext();
         public OrderRepository()
         {
-            
+
         }
 
         public void RemoveWishListItem(int gameId, int userId)
@@ -49,7 +49,7 @@ namespace DAL.Repo
 
         public void AddGamesOrder(List<Game> games, int orderId)
         {
-            OrderContext.AddGamesOrder(games,orderId);
+            OrderContext.AddGamesOrder(games, orderId);
         }
 
         public int GetOrderId()
