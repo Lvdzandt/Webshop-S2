@@ -6,7 +6,6 @@ C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.dll
 C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.pdb
-C:\Users\lucvd\Desktop\ICT\S2 Her\Code\WebShop-S2\Models\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.deps.json
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.dll
 C:\Users\Luc\Desktop\git\Webshop-S2\WebShop-S2\Models\bin\Debug\netcoreapp2.1\Model.pdb

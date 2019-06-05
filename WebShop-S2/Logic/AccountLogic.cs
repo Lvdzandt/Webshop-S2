@@ -10,7 +10,7 @@ namespace Logic
     {
         private readonly AccountRepository _repo = new AccountRepository();
 
-        private static string PasswordHash(string password)
+        public string PasswordHash(string password)
         {
             using (var sha256 = SHA256.Create())
             {
