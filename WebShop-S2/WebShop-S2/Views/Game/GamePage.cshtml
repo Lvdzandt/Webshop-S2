@@ -11,12 +11,12 @@
 <link rel="stylesheet" type="text/css" href="/css/GamePage.css"/>
 
 <div>
-    <div id="GameInfo" style="float:left">
+    <div class="GameInfo">
         <div>
-            <h2 class="">@Model.Game.Name</h2>
-            <ul id="GameInfo">
+            <h2>@Model.Game.Name</h2>
+            <ul>
                 <li><p><span class="glyphicon glyphicon-calendar"></span> @Model.Game.ReleaseDate.ToShortDateString()</p></li>
-                <li><p><span class="glyphicon glyphicon-star"></span>Score</p></li>
+                @*<li><p><span class="glyphicon glyphicon-star"></span>Score</p></li>*@
                 <li><p>@Model.Game.GameTag</p></li>
             </ul>
             <hr />
@@ -24,30 +24,27 @@
             {
                 @using (Html.BeginForm("AddShoppingList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
                 {
-                    <input style="float:left;margin-right:10%" type="submit" value="ShoppingList" />
+                    <input type="submit" value="ShoppingList" />
                 }
                 @using (Html.BeginForm("AddWishListItem", "Order", new { gameId = @Model.Game.Id }, FormMethod.Post))
                 {
-                    <input style="float:left" type="submit" value="WishList" />
+                    <input type="submit" value="WishList" />
                 }
             }
         </div>
 
     </div>
-    <div style="float:right;border:dashed;height:80%;width:70%;height:300px;margin:2%">
-        <img style="width:80%;height:50%;" alt="/images/NoIMG.png" src="" class="img img-responsive profile-image">
+    <div class="GamePic">
+        <img alt="/images/NoIMG.png" src="">
     </div>
-    <div style="margin-top:5%;width:20%;float:left">
+    @*<div style="margin-top:5%;width:20%;float:left">
         <h3>Reviews</h3>
         <h2 style="float:left">Name</h2>
         <h2 style="float:right">Score</h2>
-        <br />
-        <br />
-        <br />
+        
         <p><h1 style="float:left">Description</h1></p>
-    </div>
-
-    <div class="center-block" style="float:left">
+    </div>*@
+    <div class="GameDescription">
         @Model.Game.Description
     </div>
 </div>
