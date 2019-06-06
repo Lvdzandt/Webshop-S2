@@ -1565,23 +1565,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucvd\\.nuget\\packages\\": {},
+    "C:\\Users\\Luc\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\lucvd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Luc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\lucvd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1594,8 +1594,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj": {
-              "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj"
+            "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Models\\Model.csproj": {
+              "projectPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Models\\Model.csproj"
             }
           }
         }
