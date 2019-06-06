@@ -1,14 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
 
 namespace Model
 {
     public static class ShoppingCart
     {
-        public static List<Game> GameList { get; set; }
+        private static List<Game> GameList { get; set; }
 
         static ShoppingCart()
         {
             GameList = new List<Game>();
+        }
+
+        public static List<Game> GetShoppingList()
+        {
+            return GameList;
         }
 
         public static void ClearList()
@@ -18,27 +24,21 @@ namespace Model
 
         public static void RemoveGame(int id)
         {
-            foreach (var item in GameList)
-            {
-                if (item.Id == id)
-                {
-                    GameList.Remove(item);
-                    break;
-                }
-            }
+            GameList.RemoveAll(item => item.Id == id);
+            
         }
 
         public static void AddGame(Game game)
         {
-            bool Double = false;
+            bool alreadyExists = false;
             foreach (var item in GameList)
             {
                 if (item.Name == game.Name)
                 {
-                    Double = true;
+                    alreadyExists = true;
                 }
             }
-            if (!Double)
+            if (!alreadyExists)
             {
                 GameList.Add(game);
             }

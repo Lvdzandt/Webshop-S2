@@ -34,7 +34,7 @@ namespace Logic
         }
         public List<Game> GetShoppingList()
         {
-            return ShoppingCart.GameList;
+            return ShoppingCart.GetShoppingList();
         }
 
         public void AddOrder(Order order)

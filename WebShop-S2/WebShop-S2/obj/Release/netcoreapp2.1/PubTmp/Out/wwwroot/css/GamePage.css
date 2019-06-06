@@ -1,0 +1,28 @@
+﻿div.GameInfo {
+    float: left;
+}
+
+    div.GameInfo input {
+        float: left;
+        margin-right: 10%;
+    }
+
+.GamePic {
+    float: right;
+    border: dashed;
+    width: 80%;
+    height: 300px;
+    margin: 2%;
+}
+
+#GamePic img {
+    width: 80%;
+    height: 50%;
+}
+
+.GameDescription {
+    float:right;
+    border:groove;
+    margin:2%;
+    width:80%;
+}

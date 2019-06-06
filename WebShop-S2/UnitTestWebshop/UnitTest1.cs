@@ -66,7 +66,7 @@ namespace UnitTestWebShop
 
 
             //assert
-            Assert.AreEqual(0, ShoppingCart.GameList.Count);
+            Assert.AreEqual(0, logic.GetShoppingList().Count);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace UnitTestWebShop
             logic.AddShoppingCartGame(game);
 
             //assert
-            Assert.AreEqual(1,ShoppingCart.GameList.Count);
+            Assert.AreEqual(1,logic.GetShoppingList().Count);
         }
         
     }
