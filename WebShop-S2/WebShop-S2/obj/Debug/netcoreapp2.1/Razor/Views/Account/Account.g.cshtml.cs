@@ -65,7 +65,7 @@ using WebShop_S2.Models;
             WriteLiteral("\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/Profile.css\"/>\r\n\r\n<div id=\"ProfileInfo\" class=\"col-md-3\">\r\n    <div class=\"\">\r\n        ");
             EndContext();
             BeginContext(227, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "7bdac1b0d64b4d3bb8f6c425180cd634", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5ed4f62f37ea4a93aa480e85dd2e63a1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

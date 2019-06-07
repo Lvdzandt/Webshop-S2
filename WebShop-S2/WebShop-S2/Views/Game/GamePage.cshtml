@@ -8,7 +8,7 @@
     var state = Context.Session.TryGetValue("_Name", out sessionName);
 }
 
-<link rel="stylesheet" type="text/css" href="/css/GamePage.css"/>
+<link rel="stylesheet" type="text/css" href="/css/GamePage.css" />
 
 <div>
     <div class="GameInfo">
@@ -38,13 +38,17 @@
         <img alt="/images/NoIMG.png" src="">
     </div>
     @*<div style="margin-top:5%;width:20%;float:left">
-        <h3>Reviews</h3>
-        <h2 style="float:left">Name</h2>
-        <h2 style="float:right">Score</h2>
-        
-        <p><h1 style="float:left">Description</h1></p>
-    </div>*@
+            <h3>Reviews</h3>
+            <h2 style="float:left">Name</h2>
+            <h2 style="float:right">Score</h2>
+
+            <p><h1 style="float:left">Description</h1></p>
+        </div>*@
     <div class="GameDescription">
         @Model.Game.Description
     </div>
+</div>
+
+<div>
+    <a href="/Game/AllGames">Back to Profile</a>
 </div>

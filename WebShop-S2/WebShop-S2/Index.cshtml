@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@{  var sessionName = new byte[20];
+    var status = Context.Session.TryGetValue("_Name", out sessionName);
+    var name = Context.Session.GetString("_Name");
+}
+
+@if (status)
+{
+    <div style="text-align:center">
+        <h1>Welcome to the GameShop @name!</h1>
+    </div>
+}
+else
+{
+    <div style="text-align:center">
+        <h1>Welcome to the GameShop!</h1>
+    </div>
+}
+
+

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8fRXjHECiku0aT5miCCupwAAAAACAAAAAAAQZgAAAAEAACAAAADf0R5mYP0CCPzhkm6o8kkOcZjvj0+83YcI5CKN+ARlDQAAAAAOgAAAAAIAACAAAADKXdXAFjlX96ZhiMX8VFikkncGVXxKfQBhoVK8C20IfCAAAADORL9rLBCixsXfboa6Wi73Q5m45vArnbucRGPqa5ObSkAAAADpJ/yrEEzWFV4+uCqYI7maBsnsnXwmws+0/QcZh/xTRkvAbqvljmF2q/2tuHS/Yf9XQ0NXvwUc4skNRzOBHes0</EncryptedPassword>
+    <_PublishTargetUrl>ftp://venus.fhict.nl/domains/i361369core.venus.fhict.nl</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>05/04/2019 09:47:22</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>05/04/2019 09:47:22</publishTime>
+    </File>
+    <File Include="Controllers/AccountController.cs">
+      <publishTime>06/06/2019 14:29:08</publishTime>
+    </File>
+    <File Include="Controllers/GameController.cs">
+      <publishTime>06/07/2019 13:30:22</publishTime>
+    </File>
+    <File Include="Controllers/HomeController.cs">
+      <publishTime>06/07/2019 13:30:22</publishTime>
+    </File>
+    <File Include="Controllers/OrderController.cs">
+      <publishTime>06/06/2019 14:37:29</publishTime>
+    </File>
+    <File Include="Controllers/ReviewController.cs">
+      <publishTime>04/12/2019 12:43:48</publishTime>
+    </File>
+    <File Include="DAL.dll">
+      <publishTime>06/06/2019 15:42:02</publishTime>
+    </File>
+    <File Include="DAL.pdb">
+      <publishTime>06/06/2019 15:42:02</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>07/06/2018 00:27:02</publishTime>
+    </File>
+    <File Include="Logic.dll">
+      <publishTime>06/06/2019 15:42:03</publishTime>
+    </File>
+    <File Include="Logic.pdb">
+      <publishTime>06/06/2019 15:42:03</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>07/06/2018 00:27:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>07/06/2018 00:26:58</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>07/06/2018 00:26:54</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>07/06/2018 00:26:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>07/06/2018 00:27:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>07/06/2018 00:27:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>07/06/2018 00:26:58</publishTime>
+    </File>
+    <File Include="Model.dll">
+      <publishTime>06/06/2019 15:42:02</publishTime>
+    </File>
+    <File Include="Model.pdb">
+      <publishTime>06/06/2019 15:42:02</publishTime>
+    </File>
+    <File Include="Models/AccountViewModel.cs">
+      <publishTime>05/27/2019 15:45:53</publishTime>
+    </File>
+    <File Include="Models/AddGameViewModel.cs">
+      <publishTime>06/05/2019 17:03:45</publishTime>
+    </File>
+    <File Include="Models/AllGameViewModel.cs">
+      <publishTime>05/29/2019 10:17:58</publishTime>
+    </File>
+    <File Include="Models/EditAccountModel.cs">
+      <publishTime>05/10/2019 11:29:31</publishTime>
+    </File>
+    <File Include="Models/ErrorViewModel.cs">
+      <publishTime>05/10/2019 11:28:51</publishTime>
+    </File>
+    <File Include="Models/GameViewModel.cs">
+      <publishTime>05/10/2019 11:28:57</publishTime>
+    </File>
+    <File Include="Models/LoginViewModel.cs">
+      <publishTime>06/05/2019 17:04:08</publishTime>
+    </File>
+    <File Include="Models/OrderViewModel.cs">
+      <publishTime>06/05/2019 17:04:17</publishTime>
+    </File>
+    <File Include="Models/RegisterViewModel.cs">
+      <publishTime>06/05/2019 17:04:38</publishTime>
+    </File>
+    <File Include="Models/ReviewViewModel.cs">
+      <publishTime>06/05/2019 17:04:49</publishTime>
+    </File>
+    <File Include="Models/ShoppingListViewModel.cs">
+      <publishTime>06/05/2019 17:04:56</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Account/Account.cshtml">
+      <publishTime>06/06/2019 13:22:34</publishTime>
+    </File>
+    <File Include="Views/Account/Edit.cshtml">
+      <publishTime>05/09/2019 12:56:56</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>04/26/2019 11:07:42</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>05/10/2019 11:31:29</publishTime>
+    </File>
+    <File Include="Views/Game/AddGame.cshtml">
+      <publishTime>05/29/2019 10:17:58</publishTime>
+    </File>
+    <File Include="Views/Game/AllGames.cshtml">
+      <publishTime>05/06/2019 15:50:12</publishTime>
+    </File>
+    <File Include="Views/Game/GamePage.cshtml">
+      <publishTime>06/07/2019 13:30:22</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>06/07/2019 13:30:22</publishTime>
+    </File>
+    <File Include="Views/Order/Order.cshtml">
+      <publishTime>06/07/2019 13:30:22</publishTime>
+    </File>
+    <File Include="Views/Order/OrderPage.cshtml">
+      <publishTime>05/16/2019 13:41:26</publishTime>
+    </File>
+    <File Include="Views/Order/ShoppingList.cshtml">
+      <publishTime>05/16/2019 13:41:26</publishTime>
+    </File>
+    <File Include="Views/Review/AddReview.cshtml">
+      <publishTime>04/25/2019 14:51:50</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="Views/Shared/_CookieConsentPartial.cshtml">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>06/07/2019 13:31:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_ValidationScriptsPartial.cshtml">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="Views/_ViewImports.cshtml">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>07/06/2019 11:46:31</publishTime>
+    </File>
+    <File Include="WebShop-S2.deps.json">
+      <publishTime>07/06/2019 11:46:31</publishTime>
+    </File>
+    <File Include="WebShop-S2.dll">
+      <publishTime>07/06/2019 09:41:55</publishTime>
+    </File>
+    <File Include="WebShop-S2.pdb">
+      <publishTime>07/06/2019 09:41:55</publishTime>
+    </File>
+    <File Include="WebShop-S2.runtimeconfig.json">
+      <publishTime>07/06/2019 11:46:31</publishTime>
+    </File>
+    <File Include="WebShop-S2.Views.dll">
+      <publishTime>07/06/2019 11:31:04</publishTime>
+    </File>
+    <File Include="WebShop-S2.Views.pdb">
+      <publishTime>07/06/2019 11:31:04</publishTime>
+    </File>
+    <File Include="wwwroot/css/AllGames.css">
+      <publishTime>06/07/2019 12:24:57</publishTime>
+    </File>
+    <File Include="wwwroot/css/GamePage.css">
+      <publishTime>06/06/2019 13:22:34</publishTime>
+    </File>
+    <File Include="wwwroot/css/Profile.css">
+      <publishTime>06/06/2019 13:22:34</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.min.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner1.svg">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner2.svg">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/images/banner3.svg">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/images/noImg.png">
+      <publishTime>05/09/2019 13:04:46</publishTime>
+    </File>
+    <File Include="wwwroot/js/FilterGame.js">
+      <publishTime>06/05/2019 15:35:33</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/.bower.json">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css.map">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css.map">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/npm.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/.bower.json">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/.bower.json">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/.bower.json">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>04/05/2019 09:47:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

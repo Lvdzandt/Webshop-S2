@@ -30,8 +30,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Game" asp-action="AllGames">Games</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Game" asp-action="AllGames">Games</a></li>*@
                     </ul>
                     @{  var sessionName = new byte[20];
                         var status = Context.Session.TryGetValue("_Name", out sessionName);

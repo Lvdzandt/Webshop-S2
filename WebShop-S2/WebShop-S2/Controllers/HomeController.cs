@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Logic;
 using Microsoft.AspNetCore.Mvc;
 using WebShop_S2.Models;
 
@@ -8,7 +9,13 @@ namespace WebShop_S2.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            GameLogic logic = new GameLogic();
+            AllGameViewModel model = new AllGameViewModel
+            {
+                Games = logic.GetAllGames(),
+                TagCount = logic.GetGameCount()
+            };
+            return View(model);
         }
 
         public IActionResult About()
