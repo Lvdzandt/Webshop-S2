@@ -28,11 +28,11 @@ namespace DAL.Repo
         {
             AccountContext.RegisterAccount(newAccount);
         }
-        public User GetUser(int id)
+        public dynamic GetUser(int id)
         {
             return AccountContext.GetUser(id);
         }
-        public User GetUser(string email)
+        public dynamic GetUser(string email)
         {
             return AccountContext.GetUser(email);
         }

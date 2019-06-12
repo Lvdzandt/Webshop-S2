@@ -8,8 +8,8 @@ namespace DAL.Interface
         bool CheckAccountTaken(string email);
 
         void RegisterAccount(User account);
-        User GetUser(int id);
-        User GetUser(string email);
+        dynamic GetUser(int id);
+        dynamic GetUser(string email);
         void UpdateUser(User user);
     }
 }

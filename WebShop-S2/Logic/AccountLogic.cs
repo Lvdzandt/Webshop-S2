@@ -37,11 +37,11 @@ namespace Logic
             newUser.Password = PasswordHash(newUser.Password);
             _repo.RegisterAccount(newUser);
         }
-        public User GetUser(int id)
+        public dynamic GetUser(int id)
         {
             return _repo.GetUser(id);
         }
-        public User GetUser(string email)
+        public dynamic GetUser(string email)
         {
             return _repo.GetUser(email);
         }

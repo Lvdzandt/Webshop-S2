@@ -16,7 +16,7 @@ namespace WebShop_S2.Controllers
         readonly GameLogic _gameLogic = new GameLogic();
 
         public const string SessionKeyName = "_Name";
-
+        public const string SessionKeyIsAdmin = "_IsAdmin";
 
 
         public IActionResult Account()
@@ -24,26 +24,32 @@ namespace WebShop_S2.Controllers
             var model = new AccountViewModel();
             var email = HttpContext.Session.GetString(SessionKeyName);
             var user = _accountLogic.GetUser(email);
-            model.Id = user.Id;
-            model.Email = user.Email;
-            model.Username = user.Username;
-            model.Birthday = user.Birthday;
-            model.Orders = _orderLogic.GetAllOrderById(user.Id);
-            foreach (var order in model.Orders)
+            if (!user.IsAdmin)
             {
-                foreach (var item in _orderLogic.GetAllGames())
+                model.Id = user.Id;
+                model.Email = user.Email;
+                model.Username = user.Username;
+                model.Birthday = user.Birthday;
+                model.Orders = _orderLogic.GetAllOrderById(user.Id);
+                foreach (var order in model.Orders)
                 {
-                    if (item.Item2 == order.Id)
+                    foreach (var item in _orderLogic.GetAllGames())
                     {
-                        Game game = _gameLogic.GetGame(item.Item1);
-                        order.GameList.Add(game);
-                        order.TotalPrice += game.Price;
+                        if (item.Item2 == order.Id)
+                        {
+                            Game game = _gameLogic.GetGame(item.Item1);
+                            order.GameList.Add(game);
+                            order.TotalPrice += game.Price;
+                        }
                     }
                 }
+
+                model.Reviews = new List<Review>();
+                model.WishList = _orderLogic.GetWishList(user.Id);
+                return View(model);
             }
-            model.Reviews = new List<Review>();
-            model.WishList = _orderLogic.GetWishList(user.Id);
-            return View(model);
+
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Login()
@@ -59,6 +65,12 @@ namespace WebShop_S2.Controllers
             if (_accountLogic.CheckLogin(model.Email, model.Password))
             {
                 HttpContext.Session.SetString(SessionKeyName, model.Email);
+                Account account =_accountLogic.GetUser(model.Email);
+                if (account.IsAdmin)
+                {
+                    HttpContext.Session.SetString(SessionKeyIsAdmin, "1");
+                    return RedirectToAction("Index", "Home");
+                }
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Password was incorrect");

@@ -69,9 +69,9 @@ namespace DAL.SQLContext
             }
         }
 
-        public User GetUser(string email)
+        public dynamic GetUser(string email)
         {
-            var user = new User();
+            var user = new Account();
             using (var conn = ConnectDb.GetConnection())
             {
                 conn.Open();
@@ -90,7 +90,15 @@ namespace DAL.SQLContext
                             var name = Convert.ToString(reader["UserName"]);
                             email = Convert.ToString(reader["Email"]);
                             var date = Convert.ToDateTime(reader["Birthdate"]);
-                            user = new User(id, email, name, date);
+                            bool isAdmin = Convert.ToBoolean(reader["isAdmin"]);
+                            if (isAdmin)
+                            {
+                                user = new Admin(id, email, isAdmin);
+                            }
+                            else
+                            {
+                                user = new User(id, email, name, date, isAdmin);
+                            }
                         }
                     }
                     conn.Close();
@@ -101,9 +109,9 @@ namespace DAL.SQLContext
             return user;
         }
 
-        public User GetUser(int id)
+        public dynamic GetUser(int id)
         {
-            var user = new User();
+            var user = new Account();
 
             using (var conn = ConnectDb.GetConnection())
             {
@@ -123,14 +131,22 @@ namespace DAL.SQLContext
                             var name = Convert.ToString(reader["UserName"]);
                             var email = Convert.ToString(reader["Email"]);
                             var date = Convert.ToDateTime(reader["Birthdate"]);
-                            user = new User(id, email, name, date);
+                            bool isAdmin = Convert.ToBoolean(reader["isAdmin"]);
+                            if (isAdmin)
+                            {
+                                user = new Admin(id,email,isAdmin);
+                            }
+                            else
+                            {
+                                user = new User(id, email, name, date,isAdmin);
+                            }
+                            
                         }
                     }
                     conn.Close();
                 }
 
             }
-
 
             return user;
         }
