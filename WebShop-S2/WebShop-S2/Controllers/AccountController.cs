@@ -97,7 +97,7 @@ namespace WebShop_S2.Controllers
             {
                 if (model.Password.Length >= 8)
                 {
-                    User user = new User(model.Email, model.Username, model.Birthday, model.Password);
+                    User user = new User(model.Email, model.Username, model.Birthday, model.Password, false);
                     _accountLogic.RegisterAccount(user);
                     return RedirectToAction("Index", "Home");
                 }

@@ -61,6 +61,7 @@ namespace DAL.SQLContext
                 Command.Parameters.Add("@password", SqlDbType.NVarChar).Value = account.Password;
                 Command.Parameters.Add("@email", SqlDbType.NVarChar).Value = account.Email;
                 Command.Parameters.Add("@birthdate", SqlDbType.Date).Value = account.Birthday;
+                Command.Parameters.Add("@isAdmin", SqlDbType.Bit).Value = account.IsAdmin;
                 Command.ExecuteNonQuery();
 
                 conn.Close();
