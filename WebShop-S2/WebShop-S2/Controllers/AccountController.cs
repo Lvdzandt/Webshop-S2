@@ -83,11 +83,18 @@ namespace WebShop_S2.Controllers
         {
             if (!_accountLogic.CheckAccountTaken(model.Email))
             {
-                User user = new User(model.Email, model.Username, model.Birthday, model.Password);
-                _accountLogic.RegisterAccount(user);
-                return RedirectToAction("Index", "Home");
+                if (model.Password.Length >= 8)
+                {
+                    User user = new User(model.Email, model.Username, model.Birthday, model.Password);
+                    _accountLogic.RegisterAccount(user);
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Password is too short, it has to be at least 8 characters");
             }
-            ModelState.AddModelError("", "Email has already been taken");
+            else
+            {
+                ModelState.AddModelError("", "Email has already been taken");
+            }
             return View(model);
         }
 

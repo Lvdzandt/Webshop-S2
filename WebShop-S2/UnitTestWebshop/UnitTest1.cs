@@ -4,6 +4,7 @@ using Model;
 using Logic;
 using WebShop_S2.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using WebShop_S2.Models;
 
 namespace UnitTestWebShop
 {
@@ -19,11 +20,11 @@ namespace UnitTestWebShop
             OrderLogic logic = new OrderLogic();
             //act
 
-            list.Add(new Game() { Id = 1, Price = 105 });
-            list.Add(new Game() { Id = 2, Price = 35 });
+            list.Add(new Game() {Id = 1, Price = 105});
+            list.Add(new Game() {Id = 2, Price = 35});
 
             //assert
-            Assert.AreEqual(140,logic.GetTotalPrice(list));
+            Assert.AreEqual(140, logic.GetTotalPrice(list));
         }
 
         [TestMethod]
@@ -38,7 +39,7 @@ namespace UnitTestWebShop
             password = logic.PasswordHash(password);
 
             //assert
-            Assert.AreEqual(hashedPassword,password);
+            Assert.AreEqual(hashedPassword, password);
         }
 
         [TestMethod]
@@ -59,7 +60,7 @@ namespace UnitTestWebShop
         {
             //arrange
             OrderLogic logic = new OrderLogic();
-            logic.AddShoppingCartGame(new Game() { Id = 1 });
+            logic.AddShoppingCartGame(new Game() {Id = 1});
 
             //act
             logic.RemoveShoppingCartGame(1);
@@ -79,8 +80,8 @@ namespace UnitTestWebShop
             logic.AddShoppingCartGame(game);
 
             //assert
-            Assert.AreEqual(1,logic.GetShoppingList().Count);
+            Assert.AreEqual(1, logic.GetShoppingList().Count);
         }
-        
+
     }
 }
