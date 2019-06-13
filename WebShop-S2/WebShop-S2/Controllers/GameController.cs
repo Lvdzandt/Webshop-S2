@@ -1,4 +1,5 @@
 ﻿using Logic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using WebShop_S2.Models;
@@ -20,6 +21,10 @@ namespace WebShop_S2.Controllers
         public IActionResult AddGame()
         {
             AddGameViewModel model = new AddGameViewModel();
+            if (HttpContext.Session.GetString("_IsAdmin") != "1")
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View(model);
         }
 
