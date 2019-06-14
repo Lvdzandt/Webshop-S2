@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using DAL.Interface;
+using DAL.UnitTestContext;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Model;
 using Logic;
 using WebShop_S2.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using WebShop_S2.Models;
 
 namespace UnitTestWebShop
 {
@@ -83,5 +84,50 @@ namespace UnitTestWebShop
             Assert.AreEqual(1, logic.GetShoppingList().Count);
         }
 
+        [TestMethod]
+        public void CheckLoginTest()
+        {
+            //arrange
+            IAccountContext context = new TestDateContext();
+            AccountLogic logic = new AccountLogic();
+            string email = "test@test.nl";
+            string password = "Test123";
+            
+            //act
+            bool checklogin = logic.CheckLogin(context,email,password);
+
+            //assert
+            Assert.IsTrue(checklogin);
+        }
+
+        [TestMethod]
+        public void CheckEmailNotTakenTest()
+        {
+            //arrange
+            IAccountContext context = new TestDateContext();
+            AccountLogic logic = new AccountLogic();
+            string email = "nieuwetest@test.nl";
+
+            //act
+            bool checkAccountTaken = logic.CheckAccountTaken(context, email);
+
+            //assert
+            Assert.IsFalse(checkAccountTaken);
+        }
+
+        [TestMethod]
+        public void CheckEmailTakenTest()
+        {
+            //arrange
+            IAccountContext context = new TestDateContext();
+            AccountLogic logic = new AccountLogic();
+            string email = "test@test.nl";
+
+            //act
+            bool checkAccountTaken = logic.CheckAccountTaken(context, email);
+
+            //assert
+            Assert.IsTrue(checkAccountTaken);
+        }
     }
 }

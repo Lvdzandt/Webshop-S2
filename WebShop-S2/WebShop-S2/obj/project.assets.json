@@ -12278,23 +12278,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Luc\\.nuget\\packages\\": {},
+    "C:\\Users\\lucvd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\WebShop-S2\\WebShop-S2.csproj",
+      "projectUniqueName": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\WebShop-S2\\WebShop-S2.csproj",
       "projectName": "WebShop-S2",
-      "projectPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\WebShop-S2\\WebShop-S2.csproj",
-      "packagesPath": "C:\\Users\\Luc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\WebShop-S2\\obj\\",
+      "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\WebShop-S2\\WebShop-S2.csproj",
+      "packagesPath": "C:\\Users\\lucvd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\WebShop-S2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Luc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucvd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12307,11 +12307,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Logic\\Logic.csproj": {
-              "projectPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Logic\\Logic.csproj"
+            "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Logic\\Logic.csproj": {
+              "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Logic\\Logic.csproj"
             },
-            "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Models\\Model.csproj": {
-              "projectPath": "C:\\Users\\Luc\\Desktop\\git\\Webshop-S2\\WebShop-S2\\Models\\Model.csproj"
+            "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj": {
+              "projectPath": "C:\\Users\\lucvd\\Desktop\\ICT\\S2 Her\\Code\\WebShop-S2\\Models\\Model.csproj"
             }
           }
         }

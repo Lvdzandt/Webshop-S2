@@ -40,19 +40,8 @@ namespace WebShop_S2.Controllers
                 ReleaseDate = model.ReleaseDate
             };
             Logic.AddGame(game);
-            return RedirectToAction("AllGames","Game");
+            return RedirectToAction("Index","Home");
         }
 
-        public IActionResult AllGames()
-        {
-            AllGameViewModel model = new AllGameViewModel
-            {
-                Games = Logic.GetAllGames(), TagCount = Logic.GetGameCount()
-            };
-            return View(model);
-        }
-
-        
-        
     }
 }

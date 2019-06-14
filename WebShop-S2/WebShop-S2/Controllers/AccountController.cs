@@ -43,8 +43,7 @@ namespace WebShop_S2.Controllers
                         }
                     }
                 }
-
-                model.Reviews = new List<Review>();
+;
                 model.WishList = _orderLogic.GetWishList(user.Id);
                 return View(model);
             }
@@ -73,7 +72,7 @@ namespace WebShop_S2.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("", "Password was incorrect");
+            ModelState.AddModelError("", "Username or Password was incorrect");
             return View(model);
         }
 

@@ -3,6 +3,7 @@ using Model;
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using DAL.Interface;
 
 namespace Logic
 {
@@ -49,6 +50,18 @@ namespace Logic
         public void UpdateUser(User user)
         {
             _repo.UpdateUser(user);
+        }
+
+        public bool CheckLogin(IAccountContext context, string email, string password)
+        {
+            AccountRepository repository = new AccountRepository(context);
+            return repository.CheckLogin(email, password);
+        }
+
+        public bool CheckAccountTaken(IAccountContext context, string email)
+        {
+            AccountRepository repository = new AccountRepository(context);
+            return repository.CheckAccountTaken(email);
         }
     }
 }

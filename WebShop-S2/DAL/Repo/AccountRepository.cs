@@ -6,11 +6,16 @@ namespace DAL.Repo
 {
     public class AccountRepository
     {
-        public readonly IAccountContext AccountContext = new AccountSqlContext();
+        public readonly IAccountContext AccountContext;
 
         public AccountRepository()
         {
+            AccountContext = new AccountSqlContext();
+        }
 
+        public AccountRepository(IAccountContext context)
+        {
+            AccountContext = context;
         }
 
         public bool CheckLogin(string email, string password)
