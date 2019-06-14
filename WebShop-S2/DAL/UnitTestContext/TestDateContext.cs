@@ -6,7 +6,7 @@ using Model;
 
 namespace DAL.UnitTestContext
 {
-    public  class TestDateContext : IAccountContext
+    public class TestDateContext : IAccountContext
     {
         public bool CheckLogin(string email, string password)
         {
