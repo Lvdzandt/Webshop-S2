@@ -25,9 +25,12 @@
         margin: 5%
     }
 
-div.profile-box-content {
+div.OrderList {
     float: left;
-    width: 28.3%;
-    margin-right: 5%
+    width: 40%;
 }
 
+div.WishList {
+    float: right;
+    width: 40%;
+}

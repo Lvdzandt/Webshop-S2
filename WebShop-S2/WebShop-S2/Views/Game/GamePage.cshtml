@@ -6,6 +6,7 @@
 
 @{ var sessionName = new byte[20];
     var state = Context.Session.TryGetValue("_Name", out sessionName);
+    var isAdmin = Context.Session.TryGetValue("_IsAdmin", out sessionName);
 }
 
 <link rel="stylesheet" type="text/css" href="/css/GamePage.css" />
@@ -22,13 +23,17 @@
             <hr />
             @if (state)
             {
-                @using (Html.BeginForm("AddShoppingList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
+                @if (!isAdmin)
                 {
-                    <input type="submit" value="ShoppingList" />
-                }
-                @using (Html.BeginForm("AddWishListItem", "Order", new { gameId = @Model.Game.Id }, FormMethod.Post))
-                {
-                    <input type="submit" value="WishList" />
+
+                    @using (Html.BeginForm("AddShoppingList", "Order", new { id = @Model.Game.Id }, FormMethod.Post))
+                    {
+                        <input type="submit" value="ShoppingList" />
+                    }
+                    @using (Html.BeginForm("AddWishListItem", "Order", new { gameId = @Model.Game.Id }, FormMethod.Post))
+                    {
+                        <input type="submit" value="WishList" />
+                    }
                 }
             }
         </div>

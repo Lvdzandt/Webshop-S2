@@ -55,7 +55,7 @@ namespace WebShop_S2.Controllers
             {
                 GameList = OrderLogic.GetShoppingList(),
                 OrderStatus = OrderStatus.Waiting,
-                Address = model.Order.Address,
+                Address = model.Address,
                 OrderDate = model.Order.OrderDate
             };
             var email = HttpContext.Session.GetString("_Name");
@@ -93,6 +93,8 @@ namespace WebShop_S2.Controllers
         {
             OrderLogic.RemoveShoppingCartGame(id);
             ShoppingListViewModel model = new ShoppingListViewModel { ShoppingList = OrderLogic.GetShoppingList() };
+            model.TotalPrice = OrderLogic.GetTotalPrice(model.ShoppingList);
+
             return View(model);
         }
 

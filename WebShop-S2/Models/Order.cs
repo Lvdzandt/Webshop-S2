@@ -16,9 +16,7 @@ namespace Model
     {
         public int Id { get; set; }
         public List<Game> GameList { get; set; }
-        [Required(ErrorMessage = "Adress required")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Date required")]
         public DateTime OrderDate { get; set; }
         public OrderStatus OrderStatus { get; set; }
         public decimal TotalPrice { get; set; }

@@ -20,16 +20,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/06/2019 14:29:08</publishTime>
     </File>
     <File Include="Controllers/GameController.cs">
-      <publishTime>07/06/2019 13:30:22</publishTime>
+      <publishTime>06/07/2019 13:30:22</publishTime>
     </File>
     <File Include="Controllers/HomeController.cs">
-      <publishTime>07/06/2019 13:30:22</publishTime>
+      <publishTime>06/07/2019 13:30:22</publishTime>
     </File>
     <File Include="Controllers/OrderController.cs">
       <publishTime>06/06/2019 14:37:29</publishTime>
     </File>
     <File Include="Controllers/ReviewController.cs">
-      <publishTime>12/04/2019 12:43:48</publishTime>
+      <publishTime>04/12/2019 12:43:48</publishTime>
     </File>
     <File Include="DAL.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -83,34 +83,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Models/AddGameViewModel.cs">
-      <publishTime>06/05/2019 17:03:45</publishTime>
+      <publishTime>05/06/2019 17:03:45</publishTime>
     </File>
     <File Include="Models/AllGameViewModel.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Models/EditAccountModel.cs">
-      <publishTime>05/10/2019 11:29:31</publishTime>
+      <publishTime>10/05/2019 11:29:31</publishTime>
     </File>
     <File Include="Models/ErrorViewModel.cs">
-      <publishTime>05/10/2019 11:28:51</publishTime>
+      <publishTime>10/05/2019 11:28:51</publishTime>
     </File>
     <File Include="Models/GameViewModel.cs">
-      <publishTime>05/10/2019 11:28:57</publishTime>
+      <publishTime>10/05/2019 11:28:57</publishTime>
     </File>
     <File Include="Models/LoginViewModel.cs">
-      <publishTime>06/05/2019 17:04:08</publishTime>
+      <publishTime>05/06/2019 17:04:08</publishTime>
     </File>
     <File Include="Models/OrderViewModel.cs">
-      <publishTime>06/05/2019 17:04:17</publishTime>
+      <publishTime>05/06/2019 17:04:17</publishTime>
     </File>
     <File Include="Models/RegisterViewModel.cs">
-      <publishTime>06/05/2019 17:04:38</publishTime>
+      <publishTime>05/06/2019 17:04:38</publishTime>
     </File>
     <File Include="Models/ReviewViewModel.cs">
-      <publishTime>06/05/2019 17:04:49</publishTime>
+      <publishTime>05/06/2019 17:04:49</publishTime>
     </File>
     <File Include="Models/ShoppingListViewModel.cs">
-      <publishTime>06/05/2019 17:04:56</publishTime>
+      <publishTime>05/06/2019 17:04:56</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
       <publishTime>09/27/2018 10:45:57</publishTime>
@@ -131,79 +131,79 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/27/2018 10:45:56</publishTime>
     </File>
     <File Include="Views/Account/Account.cshtml">
-      <publishTime>06/06/2019 13:22:34</publishTime>
+      <publishTime>06/14/2019 12:19:41</publishTime>
     </File>
     <File Include="Views/Account/Edit.cshtml">
-      <publishTime>09/05/2019 12:56:56</publishTime>
+      <publishTime>05/09/2019 12:56:56</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/26/2019 11:07:42</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>10/05/2019 11:31:29</publishTime>
+      <publishTime>05/10/2019 11:31:29</publishTime>
     </File>
     <File Include="Views/Game/AddGame.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/14/2019 13:11:21</publishTime>
     </File>
     <File Include="Views/Game/AllGames.cshtml">
-      <publishTime>05/06/2019 15:50:12</publishTime>
+      <publishTime>06/05/2019 15:50:12</publishTime>
     </File>
     <File Include="Views/Game/GamePage.cshtml">
-      <publishTime>07/06/2019 13:30:22</publishTime>
+      <publishTime>06/14/2019 13:12:13</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/06/2019 13:30:22</publishTime>
+      <publishTime>06/14/2019 10:30:36</publishTime>
     </File>
     <File Include="Views/Order/Order.cshtml">
-      <publishTime>07/06/2019 13:30:22</publishTime>
+      <publishTime>06/07/2019 13:30:22</publishTime>
     </File>
     <File Include="Views/Order/OrderPage.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/13/2019 12:56:39</publishTime>
     </File>
     <File Include="Views/Order/ShoppingList.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/16/2019 13:41:26</publishTime>
     </File>
     <File Include="Views/Review/AddReview.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>05/04/2019 09:47:23</publishTime>
+      <publishTime>04/05/2019 09:47:23</publishTime>
     </File>
     <File Include="Views/Shared/_CookieConsentPartial.cshtml">
-      <publishTime>05/04/2019 09:47:23</publishTime>
+      <publishTime>04/05/2019 09:47:23</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/06/2019 13:31:05</publishTime>
+      <publishTime>06/13/2019 15:38:04</publishTime>
     </File>
     <File Include="Views/Shared/_ValidationScriptsPartial.cshtml">
-      <publishTime>05/04/2019 09:47:23</publishTime>
+      <publishTime>04/05/2019 09:47:23</publishTime>
     </File>
     <File Include="Views/_ViewImports.cshtml">
-      <publishTime>05/04/2019 09:47:23</publishTime>
+      <publishTime>04/05/2019 09:47:23</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>05/04/2019 09:47:23</publishTime>
+      <publishTime>04/05/2019 09:47:23</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/14/2019 13:03:29</publishTime>
+      <publishTime>06/14/2019 13:41:52</publishTime>
     </File>
     <File Include="WebShop-S2.deps.json">
-      <publishTime>06/14/2019 13:03:29</publishTime>
+      <publishTime>06/14/2019 13:41:52</publishTime>
     </File>
     <File Include="WebShop-S2.dll">
-      <publishTime>06/14/2019 13:03:27</publishTime>
+      <publishTime>06/14/2019 13:29:22</publishTime>
     </File>
     <File Include="WebShop-S2.pdb">
-      <publishTime>06/14/2019 13:03:27</publishTime>
+      <publishTime>06/14/2019 13:29:22</publishTime>
     </File>
     <File Include="WebShop-S2.runtimeconfig.json">
-      <publishTime>06/14/2019 13:03:29</publishTime>
+      <publishTime>06/14/2019 13:41:52</publishTime>
     </File>
     <File Include="WebShop-S2.Views.dll">
-      <publishTime>06/14/2019 13:03:28</publishTime>
+      <publishTime>06/14/2019 13:29:22</publishTime>
     </File>
     <File Include="WebShop-S2.Views.pdb">
-      <publishTime>06/14/2019 13:03:28</publishTime>
+      <publishTime>06/14/2019 13:29:22</publishTime>
     </File>
     <File Include="wwwroot/css/AllGames.css">
       <publishTime>06/07/2019 12:24:57</publishTime>
@@ -212,7 +212,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/06/2019 13:22:34</publishTime>
     </File>
     <File Include="wwwroot/css/Profile.css">
-      <publishTime>06/06/2019 13:22:34</publishTime>
+      <publishTime>06/14/2019 13:22:38</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>04/05/2019 09:47:23</publishTime>

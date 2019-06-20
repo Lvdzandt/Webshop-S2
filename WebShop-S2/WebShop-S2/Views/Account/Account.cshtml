@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="profile-box-content">
+<div class="OrderList">
     <h3>Orders</h3>
     <table id="TableHeader" class="table table-striped table-bordered">
         <thead>
@@ -43,7 +43,7 @@
                     <tr class="">
                         @using (Html.BeginForm("Order", "Order", new { orderId = item.Id }, FormMethod.Post))
                         {
-                            <td><input type="submit" value="X" /></td>
+                            <td><input type="submit" value="More info" /></td>
                         }
                         <td>@item.TotalPrice $</td>
                         <td>@item.OrderStatus</td>
@@ -55,7 +55,7 @@
 </div>
 
 
-<div class="profile-box-content">
+<div class="WishList">
     <h3>WishList</h3>
     <table id="TableHeader" class="table table-striped table-bordered">
         <thead>
